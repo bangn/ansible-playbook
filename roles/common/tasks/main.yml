@@ -1,0 +1,7 @@
+---
+
+- name: Install tree command
+  apt:
+    name: "tree"
+    state: "present"
+    install_recommends: False

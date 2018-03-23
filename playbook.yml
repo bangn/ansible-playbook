@@ -1,0 +1,43 @@
+---
+
+- hosts: "localhost"
+  roles:
+    - role: common
+
+    - role: nickjj.docker
+      docker_users: [bangn]
+      docker_version: "18.02.0"
+
+    - role: cimon-io.asdf
+      asdf_user: bangn
+      asdf_plugins:
+        - name: "erlang"
+          versions:
+            - 20.2.2
+          global: 20.2.2
+        - name: "elixir"
+          versions:
+            - 1.6.1
+          global: 1.6.1
+        - name: "python"
+          versions:
+            - 3.6.4
+          global: 3.6.4
+        - name: "nodejs"
+          versions:
+            - 9.8.0
+          global: 9.8.0
+
+    - role: manala.npm
+      manala_npm_packages:
+        - babel-eslint
+        - eslint
+        - eslint-config-prettier
+        - eslint-plugin-babel
+        - eslint-plugin-import
+        - eslint-plugin-jsx-a11y
+        - eslint-plugin-prettier
+        - eslint-plugin-react
+        - eslint-plugin-react
+        - prettier
+        - prettier-eslint
