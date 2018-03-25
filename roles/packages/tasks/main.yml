@@ -1,0 +1,42 @@
+---
+
+- name: "Install deb packages"
+  become: yes
+  become_method: sudo
+  import_tasks: deb_packages.yml
+
+- name: "Install packages using curl"
+  import_tasks: curl_packages.yml
+
+# Gem packages
+- name: Install Ruby gem packages
+  become: yes
+  become_user: bangn
+  gem:
+    name: "{{item.name}}"
+    executable: "~/.asdf/shims/gem"
+  with_items:
+   - { name: rubocop }
+
+# NPM packages
+- name: Install npm packages
+  become: yes
+  become_user: bangn
+  npm:
+    name: "{{item.name}}"
+    # executable: "~/.asdf/shims/npm" # use environment as workaround
+    global: "{{item.global}}"
+    state: "{{item.state}}"
+  environment:
+    PATH: "/home/bangn/.asdf/shims/:{{ ansible_env.PATH }}"
+  with_items:
+    - { name: babel-eslint          , global: yes, state: present }
+    - { name: eslint                , global: yes, state: present }
+    - { name: eslint-config-prettier, global: yes, state: present }
+    - { name: eslint-plugin-babel   , global: yes, state: present }
+    - { name: eslint-plugin-import  , global: yes, state: present }
+    - { name: eslint-plugin-jsx-a11y, global: yes, state: present }
+    - { name: eslint-plugin-prettier, global: yes, state: present }
+    - { name: eslint-plugin-react   , global: yes, state: present }
+    - { name: prettier              , global: yes, state: present }
+    - { name: prettier-eslint       , global: yes, state: present }

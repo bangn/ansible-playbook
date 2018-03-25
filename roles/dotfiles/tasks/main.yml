@@ -1,0 +1,21 @@
+---
+
+- name: Clone dotfiles
+  git:
+    repo: 'https://github.com/bangn/dotfiles'
+    dest: /home/bangn/dotfiles
+    update: no
+  become: yes
+  become_user: bangn
+
+- name: Stow dotfiles and install zsh completions.
+  command: 'bash /home/bangn/dotfiles/install.sh'
+  args:
+    chdir: /home/bangn/dotfiles
+
+- name: Add line to .zshrc to source autojump
+  blockinfile:
+    path: /home/bangn/.zshrc
+    block: |
+      # source autojump
+      source /usr/share/autojump/autojump.zsh
