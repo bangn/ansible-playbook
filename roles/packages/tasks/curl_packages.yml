@@ -14,7 +14,9 @@
     update_cache: yes
 ## End VSCode installation
 
-## stack for Haskell development
-#- name: Install Stack for Haskell development
-#  command: sh -c 'curl -sSL https://get.haskellstack.org/ | sh'
-## Endstack for Haskell development
+# stack for Haskell development
+- name: Install Stack for Haskell development
+  become: yes
+  become_user: bangn
+  command: zsh -c 'if ! command -v stack; then curl -sSL https://get.haskellstack.org/ | sh; fi'
+# Endstack for Haskell development
