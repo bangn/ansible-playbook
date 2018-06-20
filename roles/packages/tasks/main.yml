@@ -21,6 +21,7 @@
     name: "{{item.name}}"
     executable: "~/.asdf/shims/gem"
   with_items:
+   - { name: bundler }
    - { name: rubocop }
    - { name: tmuxinator }
 
