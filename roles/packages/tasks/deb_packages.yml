@@ -9,19 +9,20 @@
     - { name: autojump                     , state: present }
     - { name: clipit                       , state: present }
     - { name: curl                         , state: present }
+    - { name: fbreader                     , state: present }
     - { name: i3                           , state: present }
+    - { name: imagemagick                  , state: present }
     - { name: neovim                       , state: present }
+    - { name: scrot                        , state: present }
+    - { name: silversearcher-ag            , state: present }
     - { name: stow                         , state: present }
     - { name: tmux                         , state: present }
     - { name: tree                         , state: present }
     - { name: vim-gnome                    , state: present }
+    - { name: virtualbox                   , state: present }
     - { name: xclip                        , state: present }
     - { name: xserver-xorg-input-synaptics , state: present }
     - { name: zsh                          , state: present }
-    - { name: virtualbox                   , state: present }
-    - { name: scrot                        , state: present }
-    - { name: imagemagick                  , state: present }
-    - { name: silversearcher-ag            , state: present }
 
 - name: Install slack using snap
   command: snap install slack --classic
