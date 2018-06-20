@@ -19,6 +19,8 @@
     - { name: xserver-xorg-input-synaptics , state: present }
     - { name: zsh                          , state: present }
     - { name: virtualbox                   , state: present }
+    - { name: scrot                        , state: present }
+    - { name: imagemagick                  , state: present }
 
 - name: Install slack using snap
   command: snap install slack --classic
