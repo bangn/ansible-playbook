@@ -5,14 +5,6 @@
     - role: cimon-io.asdf
       asdf_user: bangn
       asdf_plugins:
-        - name: "erlang"
-          versions:
-            - 20.2.2
-          global: 20.2.2
-        - name: "elixir"
-          versions:
-            - 1.6.1
-          global: 1.6.1
         - name: "python"
           versions:
             - 3.6.4
