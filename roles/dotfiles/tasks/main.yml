@@ -8,6 +8,11 @@
   become: yes
   become_user: bangn
 
+- name: Remove default asdfrc
+  file:
+    path: '/home/bangn/.asdfrc'
+    state: absent
+
 - name: Stow dotfiles and install zsh completions.
   command: 'bash /home/bangn/dotfiles/install.sh'
   args:
