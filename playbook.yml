@@ -5,6 +5,10 @@
     - role: cimon-io.asdf
       asdf_user: bangn
       asdf_plugins:
+        - name: "elixir"
+          versions:
+            - 1.6.5
+          global: 1.6.5
         - name: "python"
           versions:
             - 3.6.4
