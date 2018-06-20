@@ -17,6 +17,7 @@
     executable: "~/.asdf/shims/gem"
   with_items:
    - { name: rubocop }
+   - { name: tmuxinator }
 
 # NPM packages
 - name: Install npm packages
