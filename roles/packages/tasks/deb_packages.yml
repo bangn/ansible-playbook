@@ -21,6 +21,7 @@
     - { name: virtualbox                   , state: present }
     - { name: scrot                        , state: present }
     - { name: imagemagick                  , state: present }
+    - { name: silversearcher-ag            , state: present }
 
 - name: Install slack using snap
   command: snap install slack --classic
