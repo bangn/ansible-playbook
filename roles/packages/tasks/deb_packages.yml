@@ -21,7 +21,7 @@
     - { name: virtualbox                   , state: present }
 
 - name: Install slack using snap
-  command: sudo snap install slack --classic
+  command: snap install slack --classic
   become: yes
   become_method: sudo
 
@@ -37,6 +37,7 @@
   apt:
     name: google-chrome-stable
     state: present
+    update_cache: yes
 
 - name: Remove useless packages from the cache
   apt:
