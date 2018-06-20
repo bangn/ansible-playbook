@@ -25,9 +25,3 @@
   group:
     name: docker
     state: present
-
-- name: Add bangn to docker group
-  user:
-    name: bangn
-    group: docker
-    append: yes

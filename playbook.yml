@@ -32,6 +32,8 @@
 
     - role: packages
 
+    - role: users
+
     - role: dotfiles
 
     - role: ubuntu-tweak
