@@ -1,0 +1,33 @@
+---
+
+- name: Install prerequisite packages for installing docker
+  apt:
+    name: "{{item.name}}"
+    state: "{{item.state}}"
+  with_items:
+    - { name: apt-transport-https          , state: present }
+    - { name: ca-certificates              , state: present }
+    - { name: software-properties-common   , state: present }
+
+- name: Add docker official GPG key
+  command: sh -c 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -'
+
+- name: Set up stable docker repository
+  command: sh -c 'add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) test"'
+
+- name: Install docker
+  apt:
+    name: docker-ce
+    update_cache: yes
+    state: present
+
+- name: Add docker group
+  group:
+    name: docker
+    state: present
+
+- name: Add bangn to docker group
+  user:
+    name: bangn
+    group: docker
+    append: yes
