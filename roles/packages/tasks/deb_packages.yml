@@ -12,6 +12,7 @@
     - { name: exfat-fuse                   , state: present }
     - { name: exfat-utils                  , state: present }
     - { name: fbreader                     , state: present }
+    - { name: htop                         , state: present }
     - { name: i3                           , state: present }
     - { name: imagemagick                  , state: present }
     - { name: neovim                       , state: present }
@@ -20,12 +21,12 @@
     - { name: stow                         , state: present }
     - { name: tmux                         , state: present }
     - { name: tree                         , state: present }
+    - { name: vagrant                      , state: present }
     - { name: vim-gnome                    , state: present }
     - { name: virtualbox                   , state: present }
     - { name: xclip                        , state: present }
     - { name: xserver-xorg-input-synaptics , state: present }
     - { name: zsh                          , state: present }
-    - { name: vagrant                      , state: present }
 
 - name: Install slack using snap
   command: snap install slack --classic
