@@ -25,6 +25,7 @@
     - { name: xclip                        , state: present }
     - { name: xserver-xorg-input-synaptics , state: present }
     - { name: zsh                          , state: present }
+    - { name: vagrant                      , state: present }
 
 - name: Install slack using snap
   command: snap install slack --classic
