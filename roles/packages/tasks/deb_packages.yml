@@ -27,7 +27,8 @@
     - { name: vim-gnome                    , state: present }
     - { name: virtualbox                   , state: present }
     - { name: xclip                        , state: present }
-    - { name: xserver-xorg-input-synaptics , state: present }
+    - { name: xserver-xorg-input-synaptics , state: latest  }
+    - { name: xserver-xorg-video-intel     , state: latest  }
     - { name: zsh                          , state: present }
 
 - name: Install slack using snap
