@@ -20,3 +20,8 @@
   become_user: bangn
   command: zsh -c 'if ! command -v stack; then curl -sSL https://get.haskellstack.org/ | sh; fi'
 # Endstack for Haskell development
+
+- name: Install vim-anywhere
+  become: yes
+  become_user: bangn
+  command: bash -c 'curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash'
