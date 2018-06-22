@@ -14,6 +14,7 @@
     - { name: exfat-fuse                   , state: present }
     - { name: exfat-utils                  , state: present }
     - { name: fbreader                     , state: present }
+    - { name: fcitx                        , state: present }
     - { name: htop                         , state: present }
     - { name: i3                           , state: present }
     - { name: imagemagick                  , state: present }
@@ -26,10 +27,10 @@
     - { name: vagrant                      , state: present }
     - { name: vim-gnome                    , state: present }
     - { name: virtualbox                   , state: present }
+    - { name: xbacklight                   , state: latest  }
     - { name: xclip                        , state: present }
     - { name: xserver-xorg-input-synaptics , state: latest  }
     - { name: xserver-xorg-video-intel     , state: latest  }
-    - { name: xbacklight                   , state: latest  }
     - { name: zsh                          , state: present }
 
 - name: Install slack using snap
