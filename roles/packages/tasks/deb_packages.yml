@@ -29,6 +29,7 @@
     - { name: xclip                        , state: present }
     - { name: xserver-xorg-input-synaptics , state: latest  }
     - { name: xserver-xorg-video-intel     , state: latest  }
+    - { name: xbacklight                   , state: latest  }
     - { name: zsh                          , state: present }
 
 - name: Install slack using snap
