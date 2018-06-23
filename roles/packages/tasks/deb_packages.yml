@@ -9,6 +9,7 @@
   with_items:
     - { name: arandr                       , state: present }
     - { name: autojump                     , state: present }
+    - { name: cabal-install                , state: present }
     - { name: clipit                       , state: present }
     - { name: curl                         , state: present }
     - { name: exfat-fuse                   , state: present }
@@ -18,6 +19,7 @@
     - { name: htop                         , state: present }
     - { name: i3                           , state: present }
     - { name: imagemagick                  , state: present }
+    - { name: jq                           , state: present }
     - { name: neovim                       , state: present }
     - { name: scrot                        , state: present }
     - { name: silversearcher-ag            , state: present }
@@ -31,9 +33,8 @@
     - { name: xclip                        , state: present }
     - { name: xserver-xorg-input-synaptics , state: latest  }
     - { name: xserver-xorg-video-intel     , state: latest  }
-    - { name: zsh                          , state: present }
     - { name: yamllint                     , state: present }
-    - { name: cabal-install                , state: present }
+    - { name: zsh                          , state: present }
 
 - name: Install slack using snap
   command: snap install slack --classic
