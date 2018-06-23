@@ -24,3 +24,11 @@
     block: |
       # source autojump
       source /usr/share/autojump/autojump.zsh
+
+- name: Create screenshots directory
+  become: yes
+  become_user: bangn
+  file:
+    path: /home/bangn/Pictures/screenshots
+    state: directory
+    owner: bangn
