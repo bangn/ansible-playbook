@@ -33,6 +33,7 @@
     - { name: xserver-xorg-video-intel     , state: latest  }
     - { name: zsh                          , state: present }
     - { name: yamllint                     , state: present }
+    - { name: cabal-install                , state: present }
 
 - name: Install slack using snap
   command: snap install slack --classic
