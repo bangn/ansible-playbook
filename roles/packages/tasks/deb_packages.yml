@@ -21,6 +21,7 @@
     - { name: imagemagick                  , state: present }
     - { name: jq                           , state: present }
     - { name: neovim                       , state: present }
+    - { name: pandoc                       , state: present }
     - { name: scrot                        , state: present }
     - { name: silversearcher-ag            , state: present }
     - { name: stow                         , state: present }
