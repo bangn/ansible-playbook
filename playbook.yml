@@ -2,6 +2,16 @@
 
 - hosts: "localhost"
   roles:
+    - role: packages
+
+    - role: users
+
+    - role: dotfiles
+
+    - role: ubuntu-tweak
+      become: yes
+      become_method: sudo
+
     - role: cimon-io.asdf
       asdf_user: bangn
       asdf_plugins:
@@ -21,21 +31,8 @@
           versions:
             - 2.5.0
           global: 2.5.0
-        - name: "nodejs"
-          versions:
-            - 8.11.0
-          global: 8.11.0
         - name: "golang"
           versions:
             - 1.10.3
           global: 1.10.3
 
-    - role: packages
-
-    - role: users
-
-    - role: dotfiles
-
-    - role: ubuntu-tweak
-      become: yes
-      become_method: sudo
