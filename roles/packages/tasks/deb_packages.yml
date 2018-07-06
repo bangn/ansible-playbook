@@ -16,6 +16,7 @@
     - { name: exfat-utils                  , state: present }
     - { name: fbreader                     , state: present }
     - { name: fcitx                        , state: present }
+    - { name: feh                          , state: present }
     - { name: git                          , state: present }
     - { name: htop                         , state: present }
     - { name: i3                           , state: present }
