@@ -36,6 +36,7 @@
     - { name: xclip                        , state: present }
     - { name: xserver-xorg-input-synaptics , state: latest  }
     - { name: xserver-xorg-video-intel     , state: latest  }
+    - { name: xautolock                    , state: latest  }
     - { name: yamllint                     , state: present }
     - { name: zsh                          , state: present }
 
