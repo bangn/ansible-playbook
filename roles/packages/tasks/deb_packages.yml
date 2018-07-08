@@ -25,6 +25,7 @@
     - { name: neovim                       , state: present }
     - { name: pandoc                       , state: present }
     - { name: scrot                        , state: present }
+    - { name: shellcheck                   , state: present }
     - { name: silversearcher-ag            , state: present }
     - { name: stow                         , state: present }
     - { name: tmux                         , state: present }
