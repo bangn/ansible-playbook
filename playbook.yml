@@ -8,31 +8,14 @@
 
     - role: dotfiles
 
-    - role: ubuntu-tweak
-      become: yes
-      become_method: sudo
-
     - role: cimon-io.asdf
       asdf_user: bangn
       asdf_plugins:
-        - name: "elixir"
-          versions:
-            - 1.6.5
-          global: 1.6.5
         - name: "python"
           versions:
             - 3.6.4
           global: 3.6.4
-        - name: "rust"
-          versions:
-            - 1.26.2
-          global: 1.26.2
         - name: "ruby"
           versions:
             - 2.5.0
           global: 2.5.0
-        - name: "golang"
-          versions:
-            - 1.10.3
-          global: 1.10.3
-

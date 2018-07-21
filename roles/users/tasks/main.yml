@@ -3,6 +3,5 @@
 - name: Add bangn group and shell
   user:
     name: bangn
-    group: docker
     append: yes
     shell: /usr/bin/zsh

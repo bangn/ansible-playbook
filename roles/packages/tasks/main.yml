@@ -4,11 +4,3 @@
   become: yes
   become_method: sudo
   import_tasks: deb_packages.yml
-
-- name: "Install docker"
-  become: yes
-  become_method: sudo
-  import_tasks: docker.yml
-
-- name: "Install packages using curl"
-  import_tasks: curl_packages.yml
