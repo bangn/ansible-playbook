@@ -11,6 +11,7 @@
     - { name: autojump                     , state: present }
     - { name: cabal-install                , state: present }
     - { name: clipit                       , state: present }
+    - { name: ctags                        , state: present }
     - { name: curl                         , state: present }
     - { name: exfat-fuse                   , state: present }
     - { name: exfat-utils                  , state: present }
