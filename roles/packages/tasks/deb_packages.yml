@@ -23,6 +23,7 @@
     - { name: i3                           , state: present }
     - { name: imagemagick                  , state: present }
     - { name: jq                           , state: present }
+    - { name: ncdu                         , state: present }
     - { name: neovim                       , state: present }
     - { name: pandoc                       , state: present }
     - { name: scrot                        , state: present }
