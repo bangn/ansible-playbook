@@ -40,3 +40,13 @@
   command: 'systemctl enable lock-screen-before-suspending.service'
   args:
     chdir: /etc/systemd/system
+
+- name: Check if swappiness already set
+  shell: grep "^vm.swappiness" /etc/sysctl.conf
+  register: test_grep_swappiness
+
+- name: Change swappiness to 10 # Recommended for laptop
+  lineinfile:
+    path: /etc/sysctl.conf
+    line: "vm.swappiness=10"
+  when: test_grep_swappiness.stdout != ""
