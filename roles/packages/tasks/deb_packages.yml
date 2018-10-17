@@ -24,6 +24,7 @@
     - { name: imagemagick                  , state: present }
     - { name: jq                           , state: present }
     - { name: libssl1.0-dev                , state: present } # For installing ruby < 2.4
+    - { name: libpq-dev                    , state: present } # For installing pg gem
     - { name: ncdu                         , state: present }
     - { name: neovim                       , state: present }
     - { name: pandoc                       , state: present }
