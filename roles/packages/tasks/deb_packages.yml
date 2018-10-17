@@ -23,6 +23,7 @@
     - { name: i3                           , state: present }
     - { name: imagemagick                  , state: present }
     - { name: jq                           , state: present }
+    - { name: libssl1.0-dev                , state: present } # For installing ruby < 2.4
     - { name: ncdu                         , state: present }
     - { name: neovim                       , state: present }
     - { name: pandoc                       , state: present }
@@ -35,11 +36,11 @@
     - { name: vagrant                      , state: present }
     - { name: vim-gnome                    , state: present }
     - { name: virtualbox                   , state: present }
+    - { name: xautolock                    , state: latest  }
     - { name: xbacklight                   , state: latest  }
     - { name: xclip                        , state: present }
     - { name: xserver-xorg-input-synaptics , state: latest  }
     - { name: xserver-xorg-video-intel     , state: latest  }
-    - { name: xautolock                    , state: latest  }
     - { name: yamllint                     , state: present }
     - { name: zsh                          , state: present }
 
