@@ -36,7 +36,6 @@
     - { name: tree                         , state: present }
     - { name: vagrant                      , state: present }
     - { name: vim-gnome                    , state: present }
-    - { name: virtualbox                   , state: present }
     - { name: xautolock                    , state: latest  }
     - { name: xbacklight                   , state: latest  }
     - { name: xclip                        , state: present }
