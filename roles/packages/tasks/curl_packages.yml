@@ -25,3 +25,8 @@
   become: yes
   become_user: bangn
   command: bash -c 'curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash'
+
+- name: Install nix packages manager
+  become: yes
+  become_user: bangn
+  command: bash -c 'curl https://nixos.org/nix/install | sh'
