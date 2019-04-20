@@ -7,6 +7,7 @@
     state: "{{item.state}}"
     update_cache: yes
   with_items:
+    - { name: acpi-call-dkms               , state: present }
     - { name: arandr                       , state: present }
     - { name: autojump                     , state: present }
     - { name: cabal-install                , state: present }
@@ -23,8 +24,8 @@
     - { name: i3                           , state: present }
     - { name: imagemagick                  , state: present }
     - { name: jq                           , state: present }
-    - { name: libssl1.0-dev                , state: present } # For installing ruby < 2.4
     - { name: libpq-dev                    , state: present } # For installing pg gem
+    - { name: libssl1.0-dev                , state: present } # For installing ruby < 2.4
     - { name: ncdu                         , state: present }
     - { name: neovim                       , state: present }
     - { name: pandoc                       , state: present }
@@ -32,8 +33,9 @@
     - { name: shellcheck                   , state: present }
     - { name: silversearcher-ag            , state: present }
     - { name: stow                         , state: present }
-    - { name: tmux                         , state: present }
     - { name: tlp                          , state: present }
+    - { name: tmux                         , state: present }
+    - { name: tp-smapi-dkms                , state: present }
     - { name: tree                         , state: present }
     - { name: vagrant                      , state: present }
     - { name: vim-gnome                    , state: present }
