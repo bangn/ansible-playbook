@@ -33,6 +33,7 @@
     - { name: silversearcher-ag            , state: present }
     - { name: stow                         , state: present }
     - { name: tmux                         , state: present }
+    - { name: tlp                          , state: present }
     - { name: tree                         , state: present }
     - { name: vagrant                      , state: present }
     - { name: vim-gnome                    , state: present }
