@@ -11,4 +11,6 @@
   import_tasks: docker.yml
 
 - name: "Install packages using curl"
+  become: yes
+  become_user: bangn
   import_tasks: curl_packages.yml

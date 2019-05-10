@@ -25,13 +25,13 @@
           global: 3.6.4
         - name: "rust"
           versions:
-            - 1.26.2
-          global: 1.26.2
+            - 1.31.0
+          global: 1.31.0
         - name: "ruby"
           versions:
-            - 2.5.0
-          global: 2.5.0
+            - 2.6.0
+          global: 2.6.0
         - name: "golang"
           versions:
-            - 1.10.3
-          global: 1.10.3
+            - 1.11.1
+          global: 1.11.1

@@ -1,0 +1,35 @@
+---
+
+# Firefox
+- name: Add firefox repository
+  apt_repository:
+    repo: ppa:ubuntu-mozilla-security/ppa
+    state: present
+
+# Google Chrome
+- name: Add google-chrome key
+  apt_key:
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+    state: present
+- name: Add google-chrome repository
+  apt_repository:
+    repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+    state: present
+
+# VSCode installation
+- name: Download Microsoft GPG
+  command: sh -c 'curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg'
+
+- name: Entrust Microsoft GPG
+  command: mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+
+- name: Add Microsoft PPA Repo
+  apt_repository:
+    repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+    state: present
+
+# neovim
+- name: Add neovim stalbe ppa
+  apt_repository:
+    repo: ppa:neovim-ppa/stable
+    state: present

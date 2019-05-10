@@ -1,5 +1,8 @@
 ---
 
+- name: "Add apt repository"
+  import_tasks: apt_repository.yml
+
 # Ubuntu/Debian packages
 - name: Install deb packages
   apt:
@@ -10,61 +13,51 @@
     - { name: acpi-call-dkms               , state: present }
     - { name: arandr                       , state: present }
     - { name: autojump                     , state: present }
-    - { name: cabal-install                , state: present }
-    - { name: clipit                       , state: present }
-    - { name: ctags                        , state: present }
+    - { name: cabal-install                , state: latest  }
+    - { name: clipit                       , state: latest  }
+    - { name: code                         , state: present }
+    - { name: ctags                        , state: latest  }
     - { name: curl                         , state: present }
     - { name: exfat-fuse                   , state: present }
     - { name: exfat-utils                  , state: present }
     - { name: fbreader                     , state: present }
     - { name: fcitx                        , state: present }
     - { name: feh                          , state: present }
-    - { name: git                          , state: present }
+    - { name: firefox                      , state: latest  }
+    - { name: git                          , state: latest  }
+    - { name: google-chrome-stable         , state: latest  }
     - { name: htop                         , state: present }
-    - { name: i3                           , state: present }
+    - { name: i3                           , state: latest  }
     - { name: imagemagick                  , state: present }
     - { name: jq                           , state: present }
     - { name: libpq-dev                    , state: present } # For installing pg gem
     - { name: libssl1.0-dev                , state: present } # For installing ruby < 2.4
     - { name: ncdu                         , state: present }
-    - { name: neovim                       , state: present }
+    - { name: neovim                       , state: latest  }
     - { name: pandoc                       , state: present }
+    - { name: python3-dev                  , state: latest  }
+    - { name: python3-neovim               , state: latest  }
+    - { name: python3-pip                  , state: latest  }
     - { name: scrot                        , state: present }
-    - { name: shellcheck                   , state: present }
-    - { name: silversearcher-ag            , state: present }
+    - { name: shellcheck                   , state: latest  }
+    - { name: silversearcher-ag            , state: latest  }
     - { name: stow                         , state: present }
     - { name: tlp                          , state: present }
-    - { name: tmux                         , state: present }
+    - { name: tmux                         , state: latest  }
     - { name: tp-smapi-dkms                , state: present }
     - { name: tree                         , state: present }
-    - { name: vagrant                      , state: present }
+    - { name: vagrant                      , state: latest  }
     - { name: vim-gnome                    , state: present }
     - { name: xautolock                    , state: latest  }
     - { name: xbacklight                   , state: latest  }
-    - { name: xclip                        , state: present }
+    - { name: xclip                        , state: latest  }
     - { name: xserver-xorg-input-synaptics , state: latest  }
     - { name: xserver-xorg-video-intel     , state: latest  }
-    - { name: yamllint                     , state: present }
-    - { name: zsh                          , state: present }
+    - { name: yamllint                     , state: latest  }
+    - { name: zsh                          , state: latest  }
 
 - name: Install slack using snap
   command: snap install slack --classic
-  become: yes
-  become_method: sudo
-
-- name: Add google-chrome key
-  command: bash -c "wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -"
-
-- name: Set google-chrome repository
-  command: bash -c "echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list"
-
-- name: Install google-chrome
-  become: yes
-  become_method: sudo
-  apt:
-    name: google-chrome-stable
-    state: present
-    update_cache: yes
 
 - name: Remove useless packages from the cache
   apt:
