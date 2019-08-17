@@ -5,6 +5,6 @@
   become_user: root
   user:
     name: bangn
-    group: docker
+    group: docker,sudo
     append: yes
     shell: /usr/bin/zsh
