@@ -11,6 +11,12 @@
     state: present
 
 # VSCode installation
+- name: Install curl
+  apt:
+    name: curl
+    state: latest
+    update_cache: yes
+
 - name: Download Microsoft GPG
   command: sh -c 'curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg'
 
