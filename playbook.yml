@@ -19,3 +19,7 @@
           versions:
             - 2.6.0
           global: 2.6.0
+        - name: "golang"
+          versions:
+            - 1.12
+          global: 1.12
