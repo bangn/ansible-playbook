@@ -19,7 +19,7 @@
     state: absent
 
 - name: Stow dotfiles and install zsh completions.
-  command: 'bash /home/bangn/dotfiles/install.sh'
+  command: 'zsh /home/bangn/dotfiles/install.sh'
   args:
     chdir: /home/bangn/dotfiles
 
