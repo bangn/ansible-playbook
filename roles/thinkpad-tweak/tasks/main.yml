@@ -42,12 +42,12 @@
     chdir: /etc/systemd/system
 
 - name: Check if swappiness already set
-  shell: grep "^vm.swappiness" /etc/sysctl.conf
+  shell: grep "^vm.swappiness" /etc/sysctl.conf; exit 0
   register: test_grep_swappiness
 
 - name: Change swappiness to 3
   # https://askubuntu.com/questions/103915/how-do-i-configure-swappiness
   lineinfile:
     path: /etc/sysctl.conf
-    line: "vm.swappiness=3"
+    line: "vm.swappiness=0"
   when: test_grep_swappiness.stdout != ""
