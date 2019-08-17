@@ -1,11 +1,12 @@
 ---
 
-# Google Chrome
-- name: Add google-chrome key
-  apt_key:
-    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+# Debian buster wifi
+- name: Add debian buster non-free contrib
+  apt_repository:
+    repo: deb http://httpredir.debian.org/debian/ buster main contrib non-free
     state: present
 
+# Google Chrome
 - name: Add google-chrome repository
   apt_repository:
     repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
@@ -17,12 +18,6 @@
     name: curl
     state: latest
     update_cache: yes
-
-- name: Download Microsoft GPG
-  command: sh -c 'curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg'
-
-- name: Entrust Microsoft GPG
-  command: mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 
 - name: Add Microsoft PPA Repo
   apt_repository:

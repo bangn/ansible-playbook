@@ -24,6 +24,7 @@
     - { name: fcitx                        , state: present }
     - { name: feh                          , state: present }
     - { name: git                          , state: latest  }
+    - { name: firmware-iwlwifi             , state: latest  }
     - { name: google-chrome-stable         , state: latest  }
     - { name: graphviz                     , state: present }
     - { name: htop                         , state: present }
