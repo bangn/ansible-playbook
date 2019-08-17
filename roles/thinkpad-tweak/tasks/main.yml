@@ -41,22 +41,30 @@
   args:
     chdir: /etc/systemd/system
 
+# local.conf
+- name: Create /etc/sysctl.d/local.conf
+  file:
+    path: "{{ item }}"
+    state: touch
+    owner: root
+    mode: 0644
+  with_items:
+    - /etc/sysctl.d/local.conf
+
 - name: Check if swappiness already set
-  shell: grep "^vm.swappiness" /etc/sysctl.d/99-sysctl.conf; exit 0
+  shell: grep "^vm.swappiness" /etc/sysctl.d/local.conf; exit 0
   register: test_grep_swappiness
 
 - name: Change swappiness to 0
   lineinfile:
-    path: /etc/sysctl.d/99-sysctl.conf
+    path: /etc/sysctl.d/local.conf
     line: "vm.swappiness=0"
-  when: test_grep_swappiness.stdout != ""
 
 - name: Check if unprivileged_userns_clone already set
-  shell: grep "^kernel.unprivileged_userns_clone" /etc/sysctl.d/99-sysctl.conf; exit 0
+  shell: grep "^kernel.unprivileged_userns_clone" /etc/sysctl.d/local.conf; exit 0
   register: test_grep_unprivileged_userns_clone
 
 - name: Allow unprivileged userns clone (persist after reboot)
   lineinfile:
-    path: /etc/sysctl.d/99-sysctl.conf
+    path: /etc/sysctl.d/local.conf
     line: "kernel.unprivileged_userns_clone=1"
-  when: test_grep_unprivileged_userns_clone.stdout != ""
