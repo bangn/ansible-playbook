@@ -42,11 +42,21 @@
     chdir: /etc/systemd/system
 
 - name: Check if swappiness already set
-  shell: grep "^vm.swappiness" /etc/sysctl.conf; exit 0
+  shell: grep "^vm.swappiness" /etc/sysctl.d/99-sysctl.conf; exit 0
   register: test_grep_swappiness
 
 - name: Change swappiness to 0
   lineinfile:
-    path: /etc/sysctl.conf
+    path: /etc/sysctl.d/99-sysctl.conf
     line: "vm.swappiness=0"
   when: test_grep_swappiness.stdout != ""
+
+- name: Check if unprivileged_userns_clone already set
+  shell: grep "^kernel.unprivileged_userns_clone" /etc/sysctl.d/99-sysctl.conf; exit 0
+  register: test_grep_unprivileged_userns_clone
+
+- name: Allow unprivileged userns clone (persist after reboot)
+  lineinfile:
+    path: /etc/sysctl.d/99-sysctl.conf
+    line: "kernel.unprivileged_userns_clone=1"
+  when: test_grep_unprivileged_userns_clone.stdout != ""
