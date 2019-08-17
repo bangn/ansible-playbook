@@ -13,10 +13,21 @@
     path: '/home/bangn/.asdfrc'
     state: absent
 
+- name: Remove default tool-versions
+  file:
+    path: '/home/bangn/.tool-versions'
+    state: absent
+
 - name: Stow dotfiles and install zsh completions.
   command: 'bash /home/bangn/dotfiles/install.sh'
   args:
     chdir: /home/bangn/dotfiles
+
+- name: Create bakup directory in .vim
+  file:
+    path: /home/bangn/.vim/bakup
+    state: directory
+    owner: bangn
 
 - name: Add line to .zshrc to source autojump
   blockinfile:
