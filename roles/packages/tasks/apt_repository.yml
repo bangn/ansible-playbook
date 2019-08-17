@@ -1,11 +1,5 @@
 ---
 
-# Firefox
-- name: Add firefox repository
-  apt_repository:
-    repo: ppa:ubuntu-mozilla-security/ppa
-    state: present
-
 # Google Chrome
 - name: Add google-chrome key
   apt_key:
@@ -26,10 +20,4 @@
 - name: Add Microsoft PPA Repo
   apt_repository:
     repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
-    state: present
-
-# neovim
-- name: Add neovim stalbe ppa
-  apt_repository:
-    repo: ppa:neovim-ppa/stable
     state: present
