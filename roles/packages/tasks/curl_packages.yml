@@ -5,8 +5,17 @@
   command: zsh -c 'if ! command -v stack; then curl -sSL https://get.haskellstack.org/ | sh; fi'
 # Endstack for Haskell development
 
-- name: Install vim-anywhere
-  command: bash -c 'curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash'
+- name: Prepare for installing nix
+  file:
+    path: /nix
+    owner: bangn
+    group: bangn
+    mode: '0755'
+
+- name: Allow unprivileged userns clone
+  become: true
+  become_user: root
+  command: sysctl kernel.unprivileged_userns_clone=1
 
 - name: Install nix packages manager
   command: bash -c 'curl https://nixos.org/nix/install | sh'
