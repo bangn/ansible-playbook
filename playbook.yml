@@ -2,9 +2,9 @@
 
 - hosts: "localhost"
   roles:
-    - role: packages
-
     - role: users
+
+    - role: packages
 
     - role: dotfiles
 

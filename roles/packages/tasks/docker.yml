@@ -30,3 +30,11 @@
   group:
     name: docker
     state: present
+
+- name: Add bangn to docker
+  become: true
+  become_user: root
+  user:
+    name: bangn
+    group: docker
+    append: yes
