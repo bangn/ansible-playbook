@@ -22,11 +22,11 @@
     regexp: "{{item.regexp}}"
     line: "{{item.line}}"
   with_items:
-    - { regexp: "^#HandlePowerKey=",    line: "HandlePowerKey=hibernate"}
-    - { regexp: "^#HandleLidSwitch=",   line: "HandleLidSwitch=suspend"}
-    - { regexp: "^#HoldoffTimeoutSec=", line: "HoldoffTimeoutSec=30s"}
-    - { regexp: "^#IdleAction=",        line: "IdleAction=suspend"}
-    - { regexp: "^#IdleActionSec=",     line: "IdleActionSec=10min"}
+    - {regexp: "^#HandlePowerKey=", line: "HandlePowerKey=hibernate"}
+    - {regexp: "^#HandleLidSwitch=", line: "HandleLidSwitch=suspend"}
+    - {regexp: "^#HoldoffTimeoutSec=", line: "HoldoffTimeoutSec=30s"}
+    - {regexp: "^#IdleAction=", line: "IdleAction=suspend"}
+    - {regexp: "^#IdleActionSec=", line: "IdleActionSec=10min"}
 
 - name: Lock screen before suspending
   template:
