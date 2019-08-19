@@ -55,10 +55,10 @@
   shell: grep "^vm.swappiness" /etc/sysctl.d/local.conf; exit 0
   register: test_grep_swappiness
 
-- name: Change swappiness to 0
+- name: Change swappiness to 1
   lineinfile:
     path: /etc/sysctl.d/local.conf
-    line: "vm.swappiness=0"
+    line: "vm.swappiness=1"
 
 - name: Check if unprivileged_userns_clone already set
   shell: grep "^kernel.unprivileged_userns_clone" /etc/sysctl.d/local.conf; exit 0
