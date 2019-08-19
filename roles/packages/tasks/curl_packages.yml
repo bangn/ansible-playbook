@@ -6,8 +6,11 @@
 # Endstack for Haskell development
 
 - name: Prepare for installing nix
+  become: yes
+  become_user: root
   file:
     path: /nix
+    state: directory
     owner: bangn
     group: bangn
     mode: '0755'
