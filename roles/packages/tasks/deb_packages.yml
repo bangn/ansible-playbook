@@ -16,6 +16,7 @@
     - {name: cabal-install, state: latest}
     - {name: ctags, state: latest}
     - {name: curl, state: present}
+    - {name: evince, state: present}
     - {name: exfat-fuse, state: present}
     - {name: exfat-utils, state: present}
     - {name: fbreader, state: present}
