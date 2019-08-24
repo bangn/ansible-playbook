@@ -1,9 +1,21 @@
 ---
 
-# Debian buster wifi
+# Debian buster contrib and non-free
 - name: Add debian buster non-free contrib
   apt_repository:
-    repo: deb http://httpredir.debian.org/debian/ buster main contrib non-free
+    repo: deb http://deb.debian.org/debian/ buster contrib non-free
+    state: present
+
+# Debian buster security update apt repo
+- name: Add debian buster security update apt repo
+  apt_repository:
+    repo: deb http://security.debian.org/ buster/updates contrib non-free
+    state: present
+
+# Debian buster stable update apt repo
+- name: Add debian buster security update apt repo
+  apt_repository:
+    repo: deb http://ftp.debian.org/debian buster-updates contrib non-free
     state: present
 
 # Google Chrome
