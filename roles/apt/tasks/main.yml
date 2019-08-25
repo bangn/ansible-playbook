@@ -1,0 +1,12 @@
+---
+
+# Updates package from stable only
+- name: Add local apt config
+  become: true
+  become_user: root
+  template:
+    src:   etc/apt/apt.conf.d/local
+    dest:  /etc/apt/apt.conf.d/local
+    owner: root
+    group: root
+    mode:  0644

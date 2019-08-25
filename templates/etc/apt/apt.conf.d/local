@@ -1,0 +1,2 @@
+# Always upgrade packages from Stable
+APT::Default-Release "stable";

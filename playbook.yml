@@ -2,6 +2,8 @@
 
 - hosts: "localhost"
   roles:
+    - role: apt
+
     - role: users
 
     - role: packages
