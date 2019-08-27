@@ -16,12 +16,3 @@
 
     - role: cimon-io.asdf
       asdf_user: bangn
-      asdf_plugins:
-        - name: "ruby"
-          versions:
-            - 2.6.0
-          global: 2.6.0
-        - name: "golang"
-          versions:
-            - 1.12.9
-          global: 1.12.9
