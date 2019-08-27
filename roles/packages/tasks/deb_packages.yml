@@ -22,8 +22,8 @@
     - {name: fbreader, state: present}
     - {name: fcitx, state: present}
     - {name: feh, state: present}
-    - {name: git, state: latest}
     - {name: firmware-iwlwifi, state: latest}
+    - {name: git, state: latest}
     - {name: google-chrome-stable, state: latest}
     - {name: graphviz, state: present}
     - {name: htop, state: present}
@@ -34,6 +34,7 @@
     - {name: ncdu, state: present}
     - {name: neovim, state: latest}
     - {name: pandoc, state: present}
+    - {name: postgresql-client, state: latest}
     - {name: python3-dev, state: latest}
     - {name: python3-neovim, state: latest}
     - {name: python3-pip, state: latest}

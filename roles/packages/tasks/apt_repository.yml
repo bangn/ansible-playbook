@@ -1,19 +1,16 @@
 ---
 
-# Debian buster contrib and non-free
 - name: Add debian buster non-free contrib
   apt_repository:
     repo: deb http://deb.debian.org/debian/ buster contrib non-free
     state: present
 
-# Debian buster security update apt repo
 - name: Add debian buster security update apt repo
   apt_repository:
     repo: deb http://security.debian.org/ buster/updates contrib non-free
     state: present
 
-# Debian buster stable update apt repo
-- name: Add debian buster security update apt repo
+- name: Add debian buster stable update apt repo
   apt_repository:
     repo: deb http://ftp.debian.org/debian buster-updates contrib non-free
     state: present
@@ -26,4 +23,14 @@
 - name: Add google-chrome repository
   apt_repository:
     repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+    state: present
+
+# Postgres
+- name: Add posgres key
+  apt_key:
+    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+
+- name: Add postgres repository
+  apt_repository:
+    repo: deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main
     state: present
