@@ -3,6 +3,8 @@
 - hosts: "localhost"
   roles:
     - role: apt
+      become: true
+      become_user: root
 
     - role: users
 

@@ -1,9 +1,6 @@
 ---
 
-- name: "Add apt repository"
-  import_tasks: apt_repository.yml
-
-# Ubuntu/Debian packages
+# Deb packages
 - name: Install deb packages
   apt:
     name: "{{item.name}}"

@@ -10,3 +10,54 @@
     owner: root
     group: root
     mode:  0644
+
+- name: Add debian buster non-free contrib
+  apt_repository:
+    repo: deb http://deb.debian.org/debian/ buster contrib non-free
+    state: present
+
+- name: Add debian buster security update apt repo
+  apt_repository:
+    repo: deb http://security.debian.org/ buster/updates contrib non-free
+    state: present
+
+- name: Add debian buster stable update apt repo
+  apt_repository:
+    repo: deb http://ftp.debian.org/debian buster-updates contrib non-free
+    state: present
+
+- name: Add debian buster backport apt repo
+  apt_repository:
+    repo: deb http://deb.debian.org/debian buster-backports main contrib non-free
+    state: present
+
+# Google Chrome
+- name: Add google-chrome key
+  apt_key:
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+
+- name: Add google-chrome repository
+  apt_repository:
+    repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+    state: present
+
+# Postgres
+- name: Add posgres key
+  apt_key:
+    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+
+- name: Add postgres repository
+  apt_repository:
+    repo: deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main
+    state: present
+
+# Haskell
+- name: Add Haskell signing key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: BA3CBA3FFE22B574
+    state: present
+- name: Add debian haskell repository
+  apt_repository:
+    repo: deb http://downloads.haskell.org/debian buster main
+    state: present
