@@ -15,6 +15,11 @@
     repo: deb http://ftp.debian.org/debian buster-updates contrib non-free
     state: present
 
+- name: Add debian buster backport apt repo
+  apt_repository:
+    repo: deb http://deb.debian.org/debian buster-backports main contrib non-free
+    state: present
+
 # Google Chrome
 - name: Add google-chrome key
   apt_key:
