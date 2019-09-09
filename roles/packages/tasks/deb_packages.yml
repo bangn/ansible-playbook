@@ -28,6 +28,7 @@
     - {name: i3, state: latest}
     - {name: imagemagick, state: present}
     - {name: jq, state: present}
+    - {name: kdiff3, state: latest}
     - {name: ldnsutils, state: present}
     - {name: libpq-dev, state: present}   # For installing pg gem
     - {name: ncdu, state: present}
