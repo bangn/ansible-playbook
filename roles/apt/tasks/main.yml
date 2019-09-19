@@ -11,6 +11,16 @@
     group: root
     mode:  0644
 
+- name: Add apt config to update packages periodically
+  become: true
+  become_user: root
+  template:
+    src:   etc/apt/apt.conf.d/periodic
+    dest:  /etc/apt/apt.conf.d/periodic
+    owner: root
+    group: root
+    mode:  0644
+
 - name: Add debian buster non-free contrib
   apt_repository:
     repo: deb http://deb.debian.org/debian/ buster contrib non-free
