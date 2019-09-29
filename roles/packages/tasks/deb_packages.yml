@@ -10,7 +10,6 @@
     - {name: acpi-call-dkms, state: present}
     - {name: arandr, state: present}
     - {name: autojump, state: present}
-    - {name: cabal-install, state: latest}
     - {name: ctags, state: latest}
     - {name: curl, state: present}
     - {name: dnsutils, state: present}
