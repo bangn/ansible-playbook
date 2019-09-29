@@ -51,6 +51,7 @@
     - {name: xautolock, state: latest}
     - {name: xbacklight, state: latest}
     - {name: xclip, state: latest}
+    - {name: xdotool, state: latest}
     - {name: xfce4-clipman, state: latest}
     - {name: xfce4-clipman-plugin, state: latest}
     - {name: xserver-xorg-input-synaptics, state: latest}
