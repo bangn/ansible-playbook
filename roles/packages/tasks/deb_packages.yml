@@ -22,6 +22,7 @@
     - {name: firmware-iwlwifi, state: latest}
     - {name: git, state: latest}
     - {name: google-chrome-stable, state: latest}
+    - {name: google-cloud-sdk, state: present}
     - {name: graphviz, state: present}
     - {name: htop, state: present}
     - {name: i3, state: latest}

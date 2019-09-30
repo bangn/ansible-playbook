@@ -60,3 +60,13 @@
   apt_repository:
     repo: deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main
     state: present
+
+# gcloud
+- name: gcloud key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+- name: gcloud repository
+  apt_repository:
+    repo: deb https://packages.cloud.google.com/apt cloud-sdk main
+    state: present
