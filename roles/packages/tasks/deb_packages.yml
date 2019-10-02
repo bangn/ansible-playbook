@@ -12,6 +12,7 @@
     - {name: autojump, state: present}
     - {name: ctags, state: latest}
     - {name: curl, state: present}
+    - {name: direnv, state: latest}
     - {name: dnsutils, state: present}
     - {name: evince, state: present}
     - {name: exfat-fuse, state: present}
