@@ -24,6 +24,19 @@
   args:
     chdir: /etc/systemd/system
 
+- name: Kill all nodejs before suspending
+  template:
+    src:   etc/systemd/system/kill-all-nodejs-before-suspend.service
+    dest:  /etc/systemd/system/kill-all-nodejs-before-suspend.service
+    owner: root
+    group: root
+    mode:  0644
+
+- name: Enable kill-all-nodejs-before-suspend
+  command: 'systemctl enable kill-all-nodejs-before-suspend.service'
+  args:
+    chdir: /etc/systemd/system
+
 - name: Power tuning
   template:
     src:   etc/systemd/system/powertop.service
