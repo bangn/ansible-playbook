@@ -8,13 +8,13 @@
 
     - role: users
 
-    - role: packages
-
-    - role: dotfiles
-
     - role: thinkpad-tweak
       become: yes
       become_method: sudo
+
+    - role: packages
+
+    - role: dotfiles
 
     - role: cimon-io.asdf
       asdf_user: bangn
