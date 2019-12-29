@@ -5,16 +5,28 @@
     - role: apt
       become: true
       become_user: root
+      tags:
+        - apt
 
     - role: users
+      tags:
+        - users
 
     - role: thinkpad-tweak
       become: yes
       become_method: sudo
+      tags:
+        - thinkpad
 
     - role: packages
+      tags:
+        - packages
 
     - role: dotfiles
+      tags:
+        - dotfiles
 
     - role: cimon-io.asdf
       asdf_user: bangn
+      tags:
+        - asdf
