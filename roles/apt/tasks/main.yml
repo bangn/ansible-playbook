@@ -21,6 +21,16 @@
     group: root
     mode:  0644
 
+- name: Pin stable repos
+  become: true
+  become_user: root
+  template:
+    src:   etc/apt/preferences.d/99pin-stable
+    dest:  /etc/apt/preferences.d/99pin-stable
+    owner: root
+    group: root
+    mode:  0644
+
 - name: Pin unstable repos
   become: true
   become_user: root
