@@ -57,6 +57,7 @@
     - {name: xdotool, state: latest}
     - {name: xfce4-clipman, state: latest}
     - {name: xfce4-clipman-plugin, state: latest}
+    - {name: xinput, state: latest}
     - {name: xserver-xorg-input-synaptics, state: latest}
     - {name: xserver-xorg-video-intel, state: latest}
     - {name: yamllint, state: latest}
