@@ -46,6 +46,10 @@
     - {name: shellcheck, state: latest}
     - {name: silversearcher-ag, state: latest}
     - {name: stow, state: present}
+    - {name: texlive-fonts-extra, state: latest}
+    - {name: texlive-fonts-recommended, state: latest}
+    - {name: texlive-latex-base, state: latest}
+    - {name: texlive-latex-extra, state: latest}
     - {name: tlp, state: present}
     - {name: tmux, state: latest}
     - {name: tp-smapi-dkms, state: present}
