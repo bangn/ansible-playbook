@@ -11,6 +11,8 @@
     - {name: arandr, state: present}
     - {name: autojump, state: present}
     - {name: ctags, state: latest}
+    - {name: cups, state: present}
+    - {name: cups-pdf, state: present}
     - {name: curl, state: present}
     - {name: direnv, state: latest}
     - {name: dnsutils, state: present}
