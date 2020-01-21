@@ -22,10 +22,6 @@
       tags:
         - packages
 
-    - role: dns
-      tags:
-        - dns
-
     - role: dotfiles
       tags:
         - dotfiles
@@ -34,3 +30,7 @@
       asdf_user: bangn
       tags:
         - asdf
+
+    - role: dns
+      tags:
+        - dns
