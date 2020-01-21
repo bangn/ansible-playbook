@@ -22,6 +22,10 @@
       tags:
         - packages
 
+    - role: dns
+      tags:
+        - dns
+
     - role: dotfiles
       tags:
         - dotfiles
