@@ -43,12 +43,12 @@
 
 - name: Add debian buster non-free contrib
   apt_repository:
-    repo: deb http://deb.debian.org/debian/ buster contrib non-free
+    repo: deb http://deb.debian.org/debian buster contrib non-free
     state: present
 
 - name: Add debian buster security update apt repo
   apt_repository:
-    repo: deb http://security.debian.org/ buster/updates contrib non-free
+    repo: deb http://security.debian.org buster/updates contrib non-free
     state: present
 
 - name: Add debian buster stable update apt repo
@@ -63,7 +63,7 @@
 
 - name: Add debian unstable
   apt_repository:
-    repo: deb http://deb.debian.org/debian/ unstable main contrib non-free
+    repo: deb http://deb.debian.org/debian unstable main contrib non-free
     state: present
 
 # Google Chrome
