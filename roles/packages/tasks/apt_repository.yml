@@ -29,13 +29,3 @@
   apt_repository:
     repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
     state: present
-
-# Postgres
-- name: Add posgres key
-  apt_key:
-    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
-
-- name: Add postgres repository
-  apt_repository:
-    repo: deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main
-    state: present
