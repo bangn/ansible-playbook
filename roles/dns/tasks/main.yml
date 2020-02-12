@@ -20,3 +20,13 @@
     owner: root
     group: root
     mode:  0666
+
+- name: Add /etc/hosts
+  become: true
+  become_user: root
+  template:
+    src:   etc/hosts
+    dest:  /etc/hosts
+    owner: root
+    group: root
+    mode:  0666
