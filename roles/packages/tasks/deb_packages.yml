@@ -44,6 +44,7 @@
     - {name: python3-dev, state: latest}
     - {name: python3-neovim, state: latest}
     - {name: python3-pip, state: latest}
+    - {name: rkhunter, state: latest}
     - {name: rsync, state: latest}
     - {name: scrot, state: present}
     - {name: shellcheck, state: latest}
