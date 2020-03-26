@@ -18,6 +18,14 @@
 - name: systemd
   import_tasks: systemd.yml
 
+- name: customise tlp settings
+  template:
+    src:   etc/default/tlp
+    dest:  /etc/default/tlp
+    owner: root
+    group: root
+    mode:  0644
+
 # local.conf
 - name: Create /etc/sysctl.d/local.conf
   file:
