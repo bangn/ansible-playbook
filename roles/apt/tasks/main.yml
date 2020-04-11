@@ -1,6 +1,5 @@
 ---
 
-# Updates package from stable only
 - name: Add local apt config
   become: true
   become_user: root
@@ -21,49 +20,9 @@
     group: root
     mode:  0644
 
-- name: Pin stable repos
-  become: true
-  become_user: root
-  template:
-    src:   etc/apt/preferences.d/99pin-stable
-    dest:  /etc/apt/preferences.d/99pin-stable
-    owner: root
-    group: root
-    mode:  0644
-
-- name: Pin unstable repos
-  become: true
-  become_user: root
-  template:
-    src:   etc/apt/preferences.d/99pin-unstable
-    dest:  /etc/apt/preferences.d/99pin-unstable
-    owner: root
-    group: root
-    mode:  0644
-
-- name: Add debian buster non-free contrib
+- name: Use debian testing apt repo
   apt_repository:
-    repo: deb http://deb.debian.org/debian buster contrib non-free
-    state: present
-
-- name: Add debian buster security update apt repo
-  apt_repository:
-    repo: deb http://security.debian.org buster/updates contrib non-free
-    state: present
-
-- name: Add debian buster stable update apt repo
-  apt_repository:
-    repo: deb http://ftp.debian.org/debian buster-updates contrib non-free
-    state: present
-
-- name: Add debian buster backport apt repo
-  apt_repository:
-    repo: deb http://deb.debian.org/debian buster-backports main contrib non-free
-    state: present
-
-- name: Add debian unstable
-  apt_repository:
-    repo: deb http://deb.debian.org/debian unstable main contrib non-free
+    repo: deb http://deb.debian.org/debian testing main contrib non-free
     state: present
 
 # Google Chrome

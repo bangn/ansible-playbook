@@ -1,2 +1,2 @@
-# Always upgrade packages from Stable
-APT::Default-Release "stable";
+# Always upgrade packages from testing
+APT::Default-Release "testing";
