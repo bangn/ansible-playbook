@@ -13,9 +13,8 @@
 - name: Add docker official GPG key
   command: sh -c 'curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -'
 
-- name: Set up stable docker repository
-  command: |
-    sh -c 'add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) test"'
+- name: Set up buster docker repository
+  command: sh -c 'add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian buster test"'
 
 - name: Install docker
   apt:

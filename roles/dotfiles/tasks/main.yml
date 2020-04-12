@@ -18,11 +18,6 @@
     path: '/home/bangn/.tool-versions'
     state: absent
 
-- name: Stow dotfiles and install zsh completions.
-  command: 'zsh /home/bangn/dotfiles/install.sh'
-  args:
-    chdir: /home/bangn/dotfiles
-
 - name: Create bakup directory in .vim
   file:
     path: /home/bangn/.vim/bakup

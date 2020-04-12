@@ -24,6 +24,3 @@
 
 - name: Install zplug
   command: bash -c 'curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh'
-
-- name: Install zplug
-  command: bash -c 'curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh'
