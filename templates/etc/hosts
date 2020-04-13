@@ -1,4 +1,5 @@
 127.0.0.1	localhost dev
+127.0.1.0	debian
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
