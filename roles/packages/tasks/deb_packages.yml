@@ -16,6 +16,7 @@
     - {name: cups-pdf, state: present}
     - {name: curl, state: present}
     - {name: direnv, state: latest}
+    - {name: dnsmasq, state: present}
     - {name: dnsutils, state: present}
     - {name: evince, state: present}
     - {name: exfat-fuse, state: present}
