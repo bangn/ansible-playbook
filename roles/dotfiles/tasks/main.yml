@@ -24,13 +24,6 @@
     state: directory
     owner: bangn
 
-- name: Add line to .zshrc to source autojump
-  blockinfile:
-    path: /home/bangn/.zshrc
-    block: |
-      # source autojump
-      source /usr/share/autojump/autojump.zsh
-
 - name: Create screenshots directory
   become: yes
   become_user: bangn
