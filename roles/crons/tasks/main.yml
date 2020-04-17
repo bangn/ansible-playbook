@@ -1,0 +1,17 @@
+---
+
+- name: Add nix-store entry to crontab
+  cron:
+    name: "nix-store --optimise"
+    minute: "0"
+    hour: "10"
+    weekday: "1"
+    job: "/home/bangn/.nix-profile/bin/nix-store --optimise"
+
+- name: Add nix-collect-garbage to crontab
+  cron:
+    name: "nix-collect-garbage --delete-old"
+    minute: "0"
+    hour: "11"
+    weekday: "1"
+    job: "/home/bangn/.nix-profile/bin/nix-collect-garbage --delete-old"

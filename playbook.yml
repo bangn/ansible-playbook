@@ -31,6 +31,10 @@
       tags:
         - asdf
 
+    - role: crons
+      tags:
+        - crons
+
     - role: dns
       tags:
         - dns
