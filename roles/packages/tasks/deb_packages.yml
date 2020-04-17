@@ -8,6 +8,7 @@
     update_cache: yes
   with_items:
     - {name: acpi-call-dkms, state: present}
+    - {name: apticron, state: latest}
     - {name: arandr, state: present}
     - {name: autojump, state: present}
     - {name: borgbackup, state: latest}
@@ -59,6 +60,7 @@
     - {name: tmux, state: latest}
     - {name: tp-smapi-dkms, state: present}
     - {name: tree, state: present}
+    - {name: unattended-upgrades, state: latest}
     - {name: vagrant, state: latest}
     - {name: xautolock, state: latest}
     - {name: xbacklight, state: latest}

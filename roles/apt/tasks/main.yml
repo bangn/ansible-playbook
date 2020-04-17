@@ -9,16 +9,18 @@
     owner: root
     group: root
     mode:  0644
+  tags: apt_config
 
 - name: Add apt config to update packages periodically
   become: true
   become_user: root
   template:
-    src:   etc/apt/apt.conf.d/periodic
-    dest:  /etc/apt/apt.conf.d/periodic
+    src:   etc/apt/apt.conf.d/51unattended-upgrades
+    dest:  /etc/apt/apt.conf.d/51unattended-upgrades
     owner: root
     group: root
     mode:  0644
+  tags: apt_config
 
 - name: Use debian testing apt repo
   apt_repository:
