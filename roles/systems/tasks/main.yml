@@ -35,3 +35,31 @@
     owner: root
     group: root
     mode:  0640
+
+- name: Create exim4.conf.localmacros
+  become: true
+  become_user: root
+  template:
+    src:   etc/exim4/exim4.conf.localmacros
+    dest:  /etc/exim4/exim4.conf.localmacros
+    owner: root
+    group: root
+
+# Got ERROR for this task. Have not figured out yet
+# The file needs to be copied manually
+# - name: Create exim4.conf.template
+#   become: true
+#   become_user: root
+#   template:
+#     src:   etc/exim4/exim4.conf.template
+#     dest:  /etc/exim4/exim4.conf.template
+#     owner: root
+#     group: root
+
+- name: Add personal email to /etc/aliases
+  become: true
+  become_user: root
+  blockinfile:
+    path: /etc/aliases
+    block: |
+      bangn: thebangnguyen@gmail.com
