@@ -25,3 +25,13 @@
     owner: root
     group: root
     mode:  0640
+
+- name: Update exim4 passwd.client
+  become: true
+  become_user: root
+  template:
+    src:   etc/exim4/passwd.client
+    dest:  /etc/exim4/passwd.client
+    owner: root
+    group: root
+    mode:  0640
