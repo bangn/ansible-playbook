@@ -34,7 +34,7 @@
     dest:  /etc/exim4/passwd.client
     owner: root
     group: root
-    mode:  0640
+    mode:  0644
 
 - name: Create exim4.conf.localmacros
   become: true
