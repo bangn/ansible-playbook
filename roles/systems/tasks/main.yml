@@ -45,17 +45,6 @@
     owner: root
     group: root
 
-# Got ERROR for this task. Have not figured out yet
-# The file needs to be copied manually
-# - name: Create exim4.conf.template
-#   become: true
-#   become_user: root
-#   template:
-#     src:   etc/exim4/exim4.conf.template
-#     dest:  /etc/exim4/exim4.conf.template
-#     owner: root
-#     group: root
-
 - name: Add personal email to /etc/aliases
   become: true
   become_user: root
