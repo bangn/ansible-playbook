@@ -10,6 +10,7 @@
     - {name: acpi-call-dkms, state: present}
     - {name: apticron, state: latest}
     - {name: arandr, state: present}
+    - {name: autojump, state: present}
     - {name: borgbackup, state: latest}
     - {name: cups, state: present}
     - {name: cups-pdf, state: present}
