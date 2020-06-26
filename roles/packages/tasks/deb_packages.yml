@@ -40,7 +40,7 @@
     - {name: rofi, state: present}
     - {name: rsync, state: latest}
     - {name: scrot, state: present}
-    - {name: silversearcher-ag, state: latest}
+    - {name: ssh-askpass, state: latest}
     - {name: stow, state: present}
     - {name: texlive-fonts-extra, state: latest}
     - {name: texlive-fonts-recommended, state: latest}
