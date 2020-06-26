@@ -41,6 +41,7 @@
     - {name: rsync, state: latest}
     - {name: scrot, state: present}
     - {name: ssh-askpass, state: latest}
+    - {name: ssh-askpass-gnome, state: latest}
     - {name: stow, state: present}
     - {name: texlive-fonts-extra, state: latest}
     - {name: texlive-fonts-recommended, state: latest}
