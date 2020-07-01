@@ -58,3 +58,8 @@
   lineinfile:
     path: /etc/sysctl.d/local.conf
     line: "fs.inotify.max_user_watches = 100000"
+
+- name: Increase number of open files limit
+  lineinfile:
+    path: /etc/security/limits.conf
+    line: "*  soft  nofile  20000"
