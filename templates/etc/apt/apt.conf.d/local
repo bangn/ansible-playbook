@@ -1,0 +1,2 @@
+# Always upgrade packages from testing
+APT::Default-Release "testing";

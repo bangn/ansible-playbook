@@ -1,5 +1,5 @@
 [Unit]
-Description=Lock screen before suspending
+Description=Kill all nodejs process
 Before=sleep.target
 Before=suspend.target
 
@@ -7,7 +7,7 @@ Before=suspend.target
 User=bangn
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/i3lock && sleep 1
+ExecStart=/usr/bin/pkill node
 
 [Install]
 WantedBy=sleep.target

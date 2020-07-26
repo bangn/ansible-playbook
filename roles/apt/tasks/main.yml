@@ -1,0 +1,74 @@
+---
+
+- name: Add local apt config
+  become: true
+  become_user: root
+  template:
+    src:   etc/apt/apt.conf.d/local
+    dest:  /etc/apt/apt.conf.d/local
+    owner: root
+    group: root
+    mode:  0644
+  tags: apt_config
+
+- name: Add apt config to update packages periodically
+  become: true
+  become_user: root
+  template:
+    src:   etc/apt/apt.conf.d/51unattended-upgrades
+    dest:  /etc/apt/apt.conf.d/51unattended-upgrades
+    owner: root
+    group: root
+    mode:  0644
+  tags: apt_config
+
+- name: Add apticron config
+  become: true
+  become_user: root
+  template:
+    src: etc/apticron/apticron.conf
+    dest: /etc/apticron/apticron.conf
+    owner: root
+    group: root
+    mode:  0644
+  tags: apt_config
+
+- name: Use debian testing apt repo
+  apt_repository:
+    repo: deb http://deb.debian.org/debian testing main contrib non-free
+    state: present
+
+# Google Chrome
+- name: Add google-chrome key
+  apt_key:
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+
+- name: Add google-chrome repository
+  apt_repository:
+    repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+    state: present
+
+# gcloud
+- name: gcloud key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+- name: gcloud repository
+  apt_repository:
+    repo: deb https://packages.cloud.google.com/apt cloud-sdk main
+    state: present
+
+- name: Add debian unstable
+  apt_repository:
+    repo: deb http://deb.debian.org/debian unstable main contrib non-free
+    state: present
+
+- name: Pin unstable repos
+  become: true
+  become_user: root
+  template:
+    src:   etc/apt/preferences.d/99pin-unstable
+    dest:  /etc/apt/preferences.d/99pin-unstable
+    owner: root
+    group: root
+    mode:  0644

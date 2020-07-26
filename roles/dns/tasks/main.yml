@@ -1,0 +1,32 @@
+---
+
+- name: Add local apt config
+  become: true
+  become_user: root
+  template:
+    src:   etc/resolv.conf
+    dest:  /etc/resolv.conf
+    owner: root
+    group: root
+    mode:  0644
+    attr: +i
+
+- name: Add dnsmasq config
+  become: true
+  become_user: root
+  template:
+    src:   etc/dnsmasq.conf
+    dest:  /etc/dnsmasq.conf
+    owner: root
+    group: root
+    mode:  0666
+
+- name: Add /etc/hosts
+  become: true
+  become_user: root
+  template:
+    src:   etc/hosts
+    dest:  /etc/hosts
+    owner: root
+    group: root
+    mode:  0666

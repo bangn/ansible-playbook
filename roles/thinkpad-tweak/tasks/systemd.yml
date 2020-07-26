@@ -1,0 +1,51 @@
+- name: Suspend when lid closed
+  lineinfile:
+    path: /etc/systemd/logind.conf
+    backup: yes
+    regexp: "{{item.regexp}}"
+    line: "{{item.line}}"
+  with_items:
+    - {regexp: "^#HandlePowerKey=", line: "HandlePowerKey=hibernate"}
+    - {regexp: "^#HandleLidSwitch=", line: "HandleLidSwitch=suspend"}
+    - {regexp: "^#HoldoffTimeoutSec=", line: "HoldoffTimeoutSec=30s"}
+    - {regexp: "^#IdleAction=", line: "IdleAction=suspend"}
+    - {regexp: "^#IdleActionSec=", line: "IdleActionSec=10min"}
+
+- name: Lock screen before suspending
+  template:
+    src:   etc/systemd/system/lock-screen-before-suspending.service
+    dest:  /etc/systemd/system/lock-screen-before-suspending.service
+    owner: root
+    group: root
+    mode:  0644
+
+- name: Enable lock-screen-before-suspending
+  command: 'systemctl enable lock-screen-before-suspending.service'
+  args:
+    chdir: /etc/systemd/system
+
+- name: Kill all nodejs before suspending
+  template:
+    src:   etc/systemd/system/kill-all-nodejs-before-suspend.service
+    dest:  /etc/systemd/system/kill-all-nodejs-before-suspend.service
+    owner: root
+    group: root
+    mode:  0644
+
+- name: Enable kill-all-nodejs-before-suspend
+  command: 'systemctl enable kill-all-nodejs-before-suspend.service'
+  args:
+    chdir: /etc/systemd/system
+
+- name: Power tuning
+  template:
+    src:   etc/systemd/system/powertop.service
+    dest:  /etc/systemd/system/powertop.service
+    owner: root
+    group: root
+    mode:  0644
+
+- name: Enable powertop.service
+  command: 'systemctl enable powertop.service'
+  args:
+    chdir: /etc/systemd/system

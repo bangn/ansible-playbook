@@ -1,0 +1,10 @@
+#! /bin/bash
+
+if [ ! -x "$(command -v ansible)" ]; then
+  sudo apt update
+  sudo apt install -y python3-pip
+  pip3 install ansible
+fi
+
+ansible-galaxy install -r requirements.yml
+ansible-playbook -i inventories/localhost playbook.yml -K

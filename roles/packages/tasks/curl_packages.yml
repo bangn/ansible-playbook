@@ -3,10 +3,24 @@
 # stack for Haskell development
 - name: Install Stack for Haskell development
   command: zsh -c 'if ! command -v stack; then curl -sSL https://get.haskellstack.org/ | sh; fi'
-# Endstack for Haskell development
 
-- name: Install vim-anywhere
-  command: bash -c 'curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash'
+- name: Prepare for installing nix
+  become: yes
+  become_user: root
+  file:
+    path: /nix
+    state: directory
+    owner: bangn
+    group: bangn
+    mode: '0755'
+
+- name: Allow unprivileged userns clone
+  become: true
+  become_user: root
+  command: sysctl kernel.unprivileged_userns_clone=1
 
 - name: Install nix packages manager
   command: bash -c 'curl https://nixos.org/nix/install | sh'
+
+- name: Install zplug
+  command: bash -c 'curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh'

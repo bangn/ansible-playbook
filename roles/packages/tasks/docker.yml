@@ -5,23 +5,38 @@
     name: "{{item.name}}"
     state: "{{item.state}}"
   with_items:
-    - { name: apt-transport-https          , state: present }
-    - { name: ca-certificates              , state: present }
-    - { name: software-properties-common   , state: present }
+    - {name: apt-transport-https, state: present}
+    - {name: ca-certificates, state: present}
+    - {name: gnupg2, state: present}
+    - {name: software-properties-common, state: present}
 
 - name: Add docker official GPG key
-  command: sh -c 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -'
+  command: sh -c 'curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -'
 
-- name: Set up stable docker repository
-  command: sh -c 'add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) test"'
+- name: Set up buster docker repository
+  command: sh -c 'add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian buster test"'
 
 - name: Install docker
   apt:
-    name: docker-ce
+    name: "{{item.name}}"
+    state: "{{item.state}}"
     update_cache: yes
-    state: present
+  with_items:
+    - {name: docker-ce, state: present}
+    - {name: docker-ce-cli, state: present}
+    - {name: containerd.io, state: present}
 
 - name: Add docker group
+  become: true
+  become_user: root
   group:
     name: docker
     state: present
+
+- name: Add bangn to docker
+  become: true
+  become_user: root
+  user:
+    name: bangn
+    group: docker
+    append: yes

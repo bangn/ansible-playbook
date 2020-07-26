@@ -1,0 +1,84 @@
+---
+
+- name: Create /etc/X11/xorg.conf.d directory if it does not exist
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: root
+    mode: 0755
+  with_items:
+    - /etc/X11/xorg.conf.d
+
+- name: Tweak touchpad
+  import_tasks: touchpad.yml
+
+- name: Tweak intel_backlight
+  import_tasks: intel_backlight.yml
+
+- name: systemd
+  import_tasks: systemd.yml
+
+- name: customise tlp settings
+  template:
+    src:   etc/default/tlp
+    dest:  /etc/default/tlp
+    owner: root
+    group: root
+    mode:  0644
+
+# local.conf
+- name: Create /etc/sysctl.d/local.conf
+  file:
+    path: "{{ item }}"
+    state: touch
+    owner: root
+    mode: 0644
+  with_items:
+    - /etc/sysctl.d/local.conf
+
+- name: Check if swappiness already set
+  shell: grep "^vm.swappiness" /etc/sysctl.d/local.conf; exit 0
+  register: test_grep_swappiness
+
+- name: Change swappiness to 1
+  lineinfile:
+    path: /etc/sysctl.d/local.conf
+    line: "vm.swappiness=1"
+
+- name: Check if unprivileged_userns_clone already set
+  shell: grep "^kernel.unprivileged_userns_clone" /etc/sysctl.d/local.conf; exit 0
+  register: test_grep_unprivileged_userns_clone
+
+- name: Allow unprivileged userns clone (persist after reboot)
+  lineinfile:
+    path: /etc/sysctl.d/local.conf
+    line: "kernel.unprivileged_userns_clone=1"
+
+- name: Increase inotify max_user_watches
+  lineinfile:
+    path: /etc/sysctl.d/local.conf
+    line: "fs.inotify.max_user_watches = 100000"
+
+- name: Increase number of open files limit
+  lineinfile:
+    path: /etc/security/limits.conf
+    line: "*  soft  nofile  20000"
+
+# dnsmasq Steven Black hosts
+- name: Create /etc/dnsmasq.d directory if it does not exist
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: root
+    mode: 0755
+  with_items:
+    - /etc/dnsmasq.d
+
+- name: Create /etc/dnsmasq.d/steven-black-host.conf
+  file:
+    path: "{{ item }}"
+    state: touch
+    owner: bangn
+    mode: 0666
+  with_items:
+    - /etc/dnsmasq.d/steven-black-host.conf

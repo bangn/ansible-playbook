@@ -2,36 +2,45 @@
 
 - hosts: "localhost"
   roles:
-    - role: packages
+    - role: apt
+      become: true
+      become_user: root
+      tags:
+        - apt
 
     - role: users
+      tags:
+        - users
 
-    - role: dotfiles
-
-    - role: ubuntu-tweak
+    - role: thinkpad-tweak
       become: yes
       become_method: sudo
+      tags:
+        - thinkpad
+
+    - role: packages
+      tags:
+        - packages
+
+    - role: dotfiles
+      tags:
+        - dotfiles
 
     - role: cimon-io.asdf
       asdf_user: bangn
-      asdf_plugins:
-        - name: "elixir"
-          versions:
-            - 1.6.5
-          global: 1.6.5
-        - name: "python"
-          versions:
-            - 3.6.4
-          global: 3.6.4
-        - name: "rust"
-          versions:
-            - 1.31.0
-          global: 1.31.0
-        - name: "ruby"
-          versions:
-            - 2.6.0
-          global: 2.6.0
-        - name: "golang"
-          versions:
-            - 1.11.1
-          global: 1.11.1
+      tags:
+        - asdf
+
+    - role: systems
+      tags:
+        - systems
+
+    - role: dns
+      tags:
+        - dns
+
+    - role: lxc
+      become: true
+      become_user: root
+      tags:
+        - lxc
