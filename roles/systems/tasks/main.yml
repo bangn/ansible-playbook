@@ -7,6 +7,7 @@
     hour: "10"
     weekday: "1"
     job: "/home/bangn/.nix-profile/bin/nix-store --optimise"
+  tags: cron
 
 - name: Add nix-collect-garbage to crontab
   cron:
@@ -15,6 +16,7 @@
     hour: "11"
     weekday: "1"
     job: "/home/bangn/.nix-profile/bin/nix-collect-garbage --delete-old"
+  tags: cron
 
 - name: Update Steven Black hosts file
   cron:
@@ -23,6 +25,7 @@
     hour: "12"
     weekday: "1"
     job: "/home/bangn/dotfiles/tools/bin/steven-black-host"
+  tags: cron
 
 - name: Let exim4 send to personal account
   become: true
