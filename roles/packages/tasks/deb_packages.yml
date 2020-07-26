@@ -27,6 +27,7 @@
     - {name: google-chrome-stable, state: latest}
     - {name: google-cloud-sdk, state: present}
     - {name: i3, state: latest}
+    - {name: i3blocks, state: latest}
     - {name: imagemagick, state: present}
     - {name: ldnsutils, state: present}
     - {name: libncurses5, state: latest}  # For installing ghcup
