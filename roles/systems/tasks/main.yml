@@ -16,6 +16,14 @@
     weekday: "1"
     job: "/home/bangn/.nix-profile/bin/nix-collect-garbage --delete-old"
 
+- name: Update Steven Black hosts file
+  cron:
+    name: "Update Steven Black hosts"
+    minute: "0"
+    hour: "12"
+    weekday: "1"
+    job: "/home/bangn/dotfiles/tools/bin/steven-black-host"
+
 - name: Let exim4 send to personal account
   become: true
   become_user: root
