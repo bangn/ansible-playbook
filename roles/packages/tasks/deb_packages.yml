@@ -22,6 +22,7 @@
     - {name: fcitx, state: present}
     - {name: feh, state: present}
     - {name: firmware-iwlwifi, state: latest}
+    - {name: fonts-font-awesome, state: present}
     - {name: fonts-hack, state: present}
     - {name: fonts-hack-ttf, state: present}
     - {name: google-chrome-stable, state: latest}
