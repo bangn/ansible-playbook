@@ -38,3 +38,9 @@
     - role: dns
       tags:
         - dns
+
+    - role: lxc
+      become: true
+      become_user: root
+      tags:
+        - lxc
