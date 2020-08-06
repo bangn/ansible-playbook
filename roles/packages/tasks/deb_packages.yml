@@ -73,6 +73,13 @@
     - {name: fonts-ipafont-mincho, state: latest}
     - {name: fonts-unfonts-core, state: latest}
 
+    # Alacritty
+    - {name: cmake, state: latest}
+    - {name: pkg-config, state: latest}
+    - {name: libfreetype6-dev, state: latest}
+    - {name: libfontconfig1-dev, state: latest}
+    - {name: libxcb-xfixes0-dev, state: latest}
+
 - name: Remove useless packages from the cache
   apt:
     autoclean: yes
