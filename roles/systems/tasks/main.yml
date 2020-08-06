@@ -36,6 +36,7 @@
     owner: root
     group: root
     mode:  0640
+  tags: exim4
 
 - name: Update exim4 passwd.client
   become: true
@@ -46,6 +47,7 @@
     owner: root
     group: root
     mode:  0644
+  tags: exim4
 
 - name: Create exim4.conf.localmacros
   become: true
@@ -55,6 +57,7 @@
     dest:  /etc/exim4/exim4.conf.localmacros
     owner: root
     group: root
+  tags: exim4
 
 - name: Add personal email to /etc/aliases
   become: true
@@ -63,3 +66,14 @@
     path: /etc/aliases
     block: |
       bangn: thebangnguyen@gmail.com
+  tags: exim4
+
+- name: Create directory
+  file:
+    path: "{{item.path}}"
+    state: directory
+    owner: bangn
+  with_items:
+    - {path: "/home/bangn/oss"}
+  tags:
+    - directory
