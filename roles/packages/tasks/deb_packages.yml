@@ -54,6 +54,7 @@
     - {name: tp-smapi-dkms, state: present}
     - {name: unattended-upgrades, state: latest}
     - {name: vagrant, state: latest}
+    - {name: vim, state: latest}
     - {name: xautolock, state: latest}
     - {name: xbacklight, state: latest}
     - {name: xclip, state: latest}
