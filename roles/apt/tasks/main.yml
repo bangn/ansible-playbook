@@ -58,10 +58,10 @@
     repo: deb https://packages.cloud.google.com/apt cloud-sdk main
     state: present
 
-- name: Add debian unstable
-  apt_repository:
-    repo: deb http://deb.debian.org/debian unstable main contrib non-free
-    state: present
+# - name: Add debian unstable
+#   apt_repository:
+#     repo: deb http://deb.debian.org/debian unstable main contrib non-free
+#     state: present
 
 - name: Pin unstable repos
   become: true
