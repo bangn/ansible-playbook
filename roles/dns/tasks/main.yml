@@ -1,6 +1,6 @@
 ---
 
-- name: Add local apt config
+- name: Add local resolv config
   become: true
   become_user: root
   template:
@@ -9,7 +9,6 @@
     owner: root
     group: root
     mode:  0644
-    attr: +i
 
 - name: Add dnsmasq config
   become: true
