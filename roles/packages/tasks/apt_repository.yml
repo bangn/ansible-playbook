@@ -19,13 +19,3 @@
   apt_repository:
     repo: deb http://deb.debian.org/debian buster-backports main contrib non-free
     state: present
-
-# Google Chrome
-- name: Add google-chrome key
-  apt_key:
-    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
-
-- name: Add google-chrome repository
-  apt_repository:
-    repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
-    state: present

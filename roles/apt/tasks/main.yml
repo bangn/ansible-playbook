@@ -38,26 +38,6 @@
     repo: deb http://deb.debian.org/debian testing main contrib non-free
     state: present
 
-# Google Chrome
-- name: Add google-chrome key
-  apt_key:
-    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
-
-- name: Add google-chrome repository
-  apt_repository:
-    repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
-    state: present
-
-# gcloud
-- name: gcloud key
-  apt_key:
-    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
-
-- name: gcloud repository
-  apt_repository:
-    repo: deb https://packages.cloud.google.com/apt cloud-sdk main
-    state: present
-
 # - name: Add debian unstable
 #   apt_repository:
 #     repo: deb http://deb.debian.org/debian unstable main contrib non-free
