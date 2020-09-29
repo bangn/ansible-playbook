@@ -68,7 +68,7 @@
       bangn: thebangnguyen@gmail.com
   tags: exim4
 
-- name: Create directory
+- name: Create user directory
   file:
     path: "{{item.path}}"
     state: directory
@@ -77,3 +77,44 @@
     - {path: "/home/bangn/oss"}
   tags:
     - directory
+
+- name: Add backup group
+  become: true
+  become_user: root
+  group:
+    name: backup
+    state: present
+  tags:
+    - backup
+
+- name: Add bangn to backup
+  become: true
+  become_user: root
+  user:
+    name: bangn
+    group: backup
+    append: yes
+  tags:
+    - backup
+
+- name: Create backup directory
+  become: true
+  become_user: root
+  file:
+    path: "{{item.path}}"
+    state: directory
+    group: backup
+    mode: 0774
+  with_items:
+    - {path: "/media/backup"}
+  tags:
+    - backup
+
+- name: Add hard drive mount point to fstab
+  become: true
+  become_user: root
+  lineinfile:
+    path: /etc/fstab
+    line: "UUID=2521b73d-0f67-4c6f-8423-4a44956c0c89\t/media/backup\text4\tdefaults\t0\t2"
+  tags:
+    - backup
