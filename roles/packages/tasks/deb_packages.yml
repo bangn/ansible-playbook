@@ -31,7 +31,6 @@
     - {name: lxc, state: latest}
     - {name: openconnect, state: present}
     - {name: python3-dev, state: latest}
-    - {name: python3-neovim, state: latest}
     - {name: python3-pip, state: latest}
     - {name: rkhunter, state: latest}
     - {name: rofi, state: present}
@@ -47,7 +46,6 @@
     - {name: tp-smapi-dkms, state: present}
     - {name: unattended-upgrades, state: latest}
     - {name: vagrant, state: latest}
-    - {name: vim, state: latest}
     - {name: xautolock, state: latest}
     - {name: xbacklight, state: latest}
     - {name: xdotool, state: latest}
