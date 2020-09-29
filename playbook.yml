@@ -26,21 +26,22 @@
       tags:
         - dotfiles
 
-    - role: cimon-io.asdf
-      asdf_user: bangn
-      tags:
-        - asdf
-
     - role: systems
       tags:
         - systems
-
-    - role: dns
-      tags:
-        - dns
 
     - role: lxc
       become: true
       become_user: root
       tags:
         - lxc
+
+    - role: dns
+      tags:
+        - dns
+
+    - role: cimon-io.asdf
+      asdf_user: bangn
+      tags:
+        - asdf
+

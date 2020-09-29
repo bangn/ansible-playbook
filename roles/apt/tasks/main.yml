@@ -22,17 +22,6 @@
     mode:  0644
   tags: apt_config
 
-- name: Add apticron config
-  become: true
-  become_user: root
-  template:
-    src: etc/apticron/apticron.conf
-    dest: /etc/apticron/apticron.conf
-    owner: root
-    group: root
-    mode:  0644
-  tags: apt_config
-
 - name: Use debian testing apt repo
   apt_repository:
     repo: deb http://deb.debian.org/debian testing main contrib non-free

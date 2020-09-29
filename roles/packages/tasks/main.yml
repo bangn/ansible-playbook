@@ -6,6 +6,17 @@
   import_tasks: deb_packages.yml
   tags: deb_packages
 
+- name: Add apticron config
+  become: true
+  become_user: root
+  template:
+    src: etc/apticron/apticron.conf
+    dest: /etc/apticron/apticron.conf
+    owner: root
+    group: root
+    mode:  0644
+  tags: apt_config
+
 - name: "Install docker"
   become: yes
   become_method: sudo

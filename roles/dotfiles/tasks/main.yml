@@ -18,12 +18,6 @@
     path: '/home/bangn/.tool-versions'
     state: absent
 
-- name: Create bakup directory in .vim
-  file:
-    path: /home/bangn/.vim/bakup
-    state: directory
-    owner: bangn
-
 - name: Create screenshots directory
   become: yes
   become_user: bangn

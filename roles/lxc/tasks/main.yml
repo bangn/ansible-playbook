@@ -1,6 +1,6 @@
 ---
 
-- name: Install deb packages
+- name: Install lxc deb packages
   apt:
     name: "{{item.name}}"
     state: "{{item.state}}"

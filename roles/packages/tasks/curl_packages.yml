@@ -21,6 +21,3 @@
 
 - name: Install nix packages manager
   command: bash -c 'curl https://nixos.org/nix/install | sh'
-
-- name: Install zplug
-  command: bash -c 'curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh'
