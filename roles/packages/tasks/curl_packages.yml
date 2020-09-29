@@ -1,9 +1,5 @@
 ---
 
-# stack for Haskell development
-- name: Install Stack for Haskell development
-  command: zsh -c 'if ! command -v stack; then curl -sSL https://get.haskellstack.org/ | sh; fi'
-
 - name: Prepare for installing nix
   become: yes
   become_user: root
@@ -21,3 +17,6 @@
 
 - name: Install nix packages manager
   command: bash -c 'curl https://nixos.org/nix/install | sh'
+
+- name: Install asdf-vm
+  command: bash -c 'git clone https://github.com/asdf-vm/asdf.git ~/.asdf'

@@ -39,9 +39,3 @@
     - role: dns
       tags:
         - dns
-
-    - role: cimon-io.asdf
-      asdf_user: bangn
-      tags:
-        - asdf
-

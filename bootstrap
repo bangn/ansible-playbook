@@ -7,5 +7,4 @@ if [ ! -x "$(command -v ansible)" ]; then
 fi
 
 export PATH="~/.local/bin:$PATH"
-ansible-galaxy install -r requirements.yml
 ansible-playbook -i inventories/localhost playbook.yml -K
