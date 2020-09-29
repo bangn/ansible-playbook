@@ -28,6 +28,7 @@
     - {name: ldnsutils, state: present}
     - {name: libncurses5, state: latest}  # For installing ghcup
     - {name: libpq-dev, state: present}   # For installing pg gem
+    - {name: libssl-dev, state: latest}
     - {name: lxc, state: latest}
     - {name: openconnect, state: present}
     - {name: python3-dev, state: latest}
