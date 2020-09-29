@@ -22,10 +22,6 @@
       tags:
         - packages
 
-    - role: dotfiles
-      tags:
-        - dotfiles
-
     - role: systems
       tags:
         - systems
@@ -35,6 +31,10 @@
       become_user: root
       tags:
         - lxc
+
+    - role: dotfiles
+      tags:
+        - dotfiles
 
     - role: dns
       tags:
