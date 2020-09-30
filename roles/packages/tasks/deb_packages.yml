@@ -12,6 +12,7 @@
     - {name: arandr, state: present}
     - {name: autojump, state: present}
     - {name: borgbackup, state: latest}
+    - {name: ca-certificates, state: latest}
     - {name: cups, state: present}
     - {name: cups-pdf, state: present}
     - {name: dnsmasq, state: present}
@@ -26,11 +27,11 @@
     - {name: i3, state: latest}
     - {name: i3blocks, state: latest}
     - {name: ldnsutils, state: present}
-    - {name: libncurses5, state: latest}  # For installing ghcup
     - {name: libpq-dev, state: present}   # For installing pg gem
     - {name: libssl-dev, state: latest}
     - {name: lxc, state: latest}
     - {name: openconnect, state: present}
+    - {name: openssl, state: latest}
     - {name: python3-dev, state: latest}
     - {name: python3-pip, state: latest}
     - {name: rkhunter, state: latest}
@@ -72,11 +73,12 @@
 
     # ghcup
     - {name: libffi-dev, state: latest}
-    - {name: libncurses-dev, state: latest}
-    - {name: libtinfo5, state: latest}
     - {name: libgmp-dev, state: latest}
     - {name: libgmp10, state: latest}
     - {name: libncurses-dev, state: latest}
+    - {name: libncurses-dev, state: latest}
+    - {name: libncurses5, state: latest}
+    - {name: libtinfo5, state: latest}
 
 - name: Remove useless packages from the cache
   apt:
