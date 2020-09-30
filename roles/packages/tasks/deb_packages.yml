@@ -70,6 +70,14 @@
     - {name: libfontconfig1-dev, state: latest}
     - {name: libxcb-xfixes0-dev, state: latest}
 
+    # ghcup
+    - {name: libffi-dev, state: latest}
+    - {name: libncurses-dev, state: latest}
+    - {name: libtinfo5, state: latest}
+    - {name: libgmp-dev, state: latest}
+    - {name: libgmp10, state: latest}
+    - {name: libncurses-dev, state: latest}
+
 - name: Remove useless packages from the cache
   apt:
     autoclean: yes
