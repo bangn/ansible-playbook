@@ -19,6 +19,7 @@
     - {name: dnsutils, state: present}
     - {name: exfat-fuse, state: present}
     - {name: exfat-utils, state: present}
+    - {name: exim4, state: latest}
     - {name: fcitx, state: present}
     - {name: firmware-iwlwifi, state: latest}
     - {name: fonts-font-awesome, state: present}
