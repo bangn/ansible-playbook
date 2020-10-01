@@ -35,7 +35,7 @@
     dest:  /etc/exim4/update-exim4.conf.conf
     owner: root
     group: root
-    mode:  0640
+    mode:  0644
   tags: exim4
 
 - name: Update exim4 passwd.client
