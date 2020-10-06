@@ -5,6 +5,6 @@
 #
 # Example:
 ### target.mail.server.example:login:password
-gmail-smtp.l.google.com:system.bangn@gmail.com:password
-*.google.com:system.bangn@gmail.com:password
-smtp.gmail.com:system.bangn@gmail.com:password
+gmail-smtp.l.google.com:systems.bangn@gmail.com:password
+*.google.com:systems.bangn@gmail.com:password
+smtp.gmail.com:systems.bangn@gmail.com:password
