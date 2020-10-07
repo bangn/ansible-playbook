@@ -86,3 +86,15 @@
     line: "UUID=2521b73d-0f67-4c6f-8423-4a44956c0c89\t/media/backup\text4\tdefaults\t0\t2"
   tags:
     - backup
+
+- name: Preserve LD_LIBRARY_PATH
+  become: true
+  become_user: root
+  template:
+    src:   etc/X11/Xsession.d/90preserve_ld_library_path
+    dest:  /etc/X11/Xsession.d/90preserve_ld_library_path
+    owner: root
+    group: root
+    mode:  0644
+  tags:
+    - systems
