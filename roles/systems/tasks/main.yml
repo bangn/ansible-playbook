@@ -27,38 +27,6 @@
     job: "/home/bangn/dotfiles/tools/bin/steven-black-host"
   tags: cron
 
-- name: Let exim4 send to personal account
-  become: true
-  become_user: root
-  template:
-    src:   etc/exim4/update-exim4.conf.conf
-    dest:  /etc/exim4/update-exim4.conf.conf
-    owner: root
-    group: root
-    mode:  0644
-  tags: exim4
-
-- name: Update exim4 passwd.client
-  become: true
-  become_user: root
-  template:
-    src:   etc/exim4/passwd.client
-    dest:  /etc/exim4/passwd.client
-    owner: root
-    group: root
-    mode:  0644
-  tags: exim4
-
-- name: Create exim4.conf.localmacros
-  become: true
-  become_user: root
-  template:
-    src:   etc/exim4/exim4.conf.localmacros
-    dest:  /etc/exim4/exim4.conf.localmacros
-    owner: root
-    group: root
-  tags: exim4
-
 - name: Add personal email to /etc/aliases
   become: true
   become_user: root
