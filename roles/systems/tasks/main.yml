@@ -27,6 +27,17 @@
     job: "/home/bangn/dotfiles/tools/bin/steven-black-host"
   tags: cron
 
+- name: Copy exim4 config files to /etc/exim4
+  become: true
+  become_user: root
+  copy:
+    force: true
+    src:   ./exim4/
+    dest:  /etc/exim4/
+    owner: root
+    group: root
+  tags: exim4
+
 - name: Add personal email to /etc/aliases
   become: true
   become_user: root
