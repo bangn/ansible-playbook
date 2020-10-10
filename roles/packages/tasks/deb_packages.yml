@@ -34,7 +34,7 @@
     - {name: openconnect, state: present}
     - {name: openssl, state: latest}
     - {name: python3-dev, state: latest}
-    - {name: python3-nvim, state: latest}
+    - {name: python3-pynvim, state: latest}
     - {name: python3-pip, state: latest}
     - {name: rkhunter, state: latest}
     - {name: rofi, state: present}
