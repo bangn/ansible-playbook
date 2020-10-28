@@ -31,6 +31,7 @@
     - {name: libpq-dev, state: present}   # For installing pg gem
     - {name: libreadline-dev, state: present}
     - {name: libssl-dev, state: latest}
+    - {name: firmware-linux, state: latest}
     - {name: lxc, state: latest}
     - {name: openconnect, state: present}
     - {name: openssl, state: latest}
