@@ -32,7 +32,6 @@
     - {name: libreadline-dev, state: present}
     - {name: libssl-dev, state: latest}
     - {name: firmware-linux, state: latest}
-    - {name: lxc, state: latest}
     - {name: openconnect, state: present}
     - {name: openssl, state: latest}
     - {name: python3-dev, state: latest}
