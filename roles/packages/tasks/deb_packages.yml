@@ -22,16 +22,18 @@
     - {name: exim4, state: latest}
     - {name: fcitx, state: present}
     - {name: firmware-iwlwifi, state: latest}
+    - {name: firmware-linux, state: latest}
     - {name: fonts-font-awesome, state: present}
     - {name: fonts-hack, state: present}
     - {name: fonts-hack-ttf, state: present}
+    - {name: fwupd, state: present}
+    - {name: git, state: absent} # Use git from nix
     - {name: i3, state: latest}
     - {name: i3blocks, state: latest}
     - {name: ldnsutils, state: present}
     - {name: libpq-dev, state: present}   # For installing pg gem
     - {name: libreadline-dev, state: present}
     - {name: libssl-dev, state: latest}
-    - {name: firmware-linux, state: latest}
     - {name: openconnect, state: present}
     - {name: openssl, state: latest}
     - {name: python3-dev, state: latest}
