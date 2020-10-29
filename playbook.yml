@@ -26,12 +26,6 @@
       tags:
         - systems
 
-    - role: lxc
-      become: true
-      become_user: root
-      tags:
-        - lxc
-
     - role: dotfiles
       tags:
         - dotfiles
