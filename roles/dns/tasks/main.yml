@@ -10,6 +10,16 @@
     group: root
     mode:  0644
 
+- name: Make resolv cannot be modified
+  become: true
+  become_user: root
+  file:
+    path:  /etc/resolv.conf
+    owner: root
+    group: root
+    mode:  0644
+    attributes: +i
+
 - name: Add dnsmasq config
   become: true
   become_user: root
