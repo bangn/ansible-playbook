@@ -87,8 +87,8 @@
     - {name: libtinfo5, state: latest}
 
     # shippit
-    # - {name: imagemagick, state: latest}
-    # - {name: mcrypt, state: latest}
+    - {name: imagemagick, state: latest}
+    - {name: mcrypt, state: latest}
     - {name: libcurl4-openssl-dev, state: latest}
     - {name: libmagickwand-dev, state: latest}
     - {name: libmcrypt-dev, state: latest}
