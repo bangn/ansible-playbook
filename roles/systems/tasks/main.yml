@@ -94,7 +94,7 @@
   become_user: root
   lineinfile:
     path: /etc/fstab
-    line: "UUID=2521b73d-0f67-4c6f-8423-4a44956c0c89\t/media/backup\text4\tnofail\t0\t2"
+    line: "UUID=77f75973-ac5a-4fe0-a1d8-afff947fa647\t/media/backup\text4\tnofail\t0\t2"
   tags:
     - backup
 
