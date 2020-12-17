@@ -27,10 +27,10 @@
     repo: deb http://deb.debian.org/debian testing main contrib non-free
     state: present
 
-# - name: Add debian unstable
-#   apt_repository:
-#     repo: deb http://deb.debian.org/debian unstable main contrib non-free
-#     state: present
+- name: Add debian unstable
+  apt_repository:
+    repo: deb http://deb.debian.org/debian unstable main contrib non-free
+    state: present
 
 - name: Pin unstable repos
   become: true
