@@ -27,13 +27,14 @@
     - {name: fonts-hack, state: present}
     - {name: fonts-hack-ttf, state: present}
     - {name: fwupd, state: present}
-    - {name: git, state: absent} # Use git from nix
+    - {name: git, state: absent}  # Use git from nix
     - {name: i3, state: latest}
     - {name: i3blocks, state: latest}
     - {name: ldnsutils, state: present}
     - {name: libpq-dev, state: present}   # For installing pg gem
     - {name: libreadline-dev, state: present}
     - {name: libssl-dev, state: latest}
+    - {name: neovim, state: absent}
     - {name: openconnect, state: present}
     - {name: openssl, state: latest}
     - {name: python3-dev, state: latest}
@@ -61,6 +62,7 @@
     - {name: xfce4-clipman-plugin, state: latest}
     - {name: xserver-xorg-input-synaptics, state: latest}
     - {name: xserver-xorg-video-intel, state: latest}
+    - {name: zathura, state: present}
     - {name: zsh, state: latest}
 
     # Asian font
