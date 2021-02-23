@@ -24,6 +24,7 @@
     - {name: fcitx, state: present}
     - {name: firmware-iwlwifi, state: latest}
     - {name: firmware-linux, state: latest}
+    - {name: firmware-sof-signed, state: latest}
     - {name: fonts-font-awesome, state: present}
     - {name: fonts-hack, state: present}
     - {name: fonts-hack-ttf, state: present}

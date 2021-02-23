@@ -98,6 +98,17 @@
   tags:
     - backup
 
+- name: Configure PulseAudio's to load Alsa modules with the correct device and channel settings
+  become: true
+  become_user: root
+  blockinfile:
+    path: /etc/pulse/default.pa
+    block: |
+      load-module module-alsa-sink device=hw:0,0 channels=4
+      load-module module-alsa-source device=hw:0,6 channels=4
+  tags:
+    - systems
+
 - name: Preserve LD_LIBRARY_PATH
   become: true
   become_user: root
@@ -110,17 +121,17 @@
   tags:
     - systems
 
-- name: Disable sof audio driver and fall back to intel
-  become: true
-  become_user: root
-  replace:
-    path: /etc/default/grub
-    regexp: 'GRUB_CMDLINE_LINUX_DEFAULT'
-    replace: 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash snd_hda_intel.dmic_detect=0"'
-  tags:
-    - systems
+# - name: Disable sof audio driver and fall back to intel
+#   become: true
+#   become_user: root
+#   replace:
+#     path: /etc/default/grub
+#     regexp: 'GRUB_CMDLINE_LINUX_DEFAULT'
+#     replace: 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash snd_hda_intel.dmic_detect=0"'
+#   tags:
+#     - systems
 
-- name: Update grub after replace sof audio driver with intel
-  become: true
-  become_user: root
-  command: 'update-grub'
+# - name: Update grub after replace sof audio driver with intel
+#   become: true
+#   become_user: root
+#   command: 'update-grub'
