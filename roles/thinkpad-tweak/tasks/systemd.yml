@@ -49,3 +49,16 @@
   command: 'systemctl enable powertop.service'
   args:
     chdir: /etc/systemd/system
+
+- name: Caddy server service
+  template:
+    src:   etc/systemd/system/caddy.service
+    dest:  /etc/systemd/system/caddy.service
+    owner: root
+    group: root
+    mode:  0644
+
+- name: Enable caddy.service
+  command: 'systemctl enable caddy.service'
+  args:
+    chdir: /etc/systemd/system
