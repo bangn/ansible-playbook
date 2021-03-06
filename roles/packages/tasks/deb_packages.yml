@@ -33,6 +33,7 @@
     - {name: i3, state: latest}
     - {name: i3blocks, state: latest}
     - {name: ldnsutils, state: present}
+    - {name: libnss3-tools, state: latest}
     - {name: libpq-dev, state: present}   # For installing pg gem
     - {name: libreadline-dev, state: present}
     - {name: libssl-dev, state: latest}
