@@ -7,6 +7,7 @@
   with_items:
     - {regexp: "^#HandlePowerKey=", line: "HandlePowerKey=hibernate"}
     - {regexp: "^#HandleLidSwitch=", line: "HandleLidSwitch=suspend"}
+    - {regexp: "^#HandleLidSwitchExternalPower=suspend", line: "HandleLidSwitchExternalPower=suspend"}
     - {regexp: "^#HoldoffTimeoutSec=", line: "HoldoffTimeoutSec=30s"}
     - {regexp: "^#IdleAction=", line: "IdleAction=suspend"}
     - {regexp: "^#IdleActionSec=", line: "IdleActionSec=10min"}
