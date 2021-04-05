@@ -67,13 +67,6 @@
     - {name: zathura, state: present}
     - {name: zsh, state: latest}
 
-    # Asian font
-    - {name: fonts-arphic-ukai, state: latest}
-    - {name: fonts-arphic-uming, state: latest}
-    - {name: fonts-ipafont-gothic, state: latest}
-    - {name: fonts-ipafont-mincho, state: latest}
-    - {name: fonts-unfonts-core, state: latest}
-
     # Alacritty
     - {name: cmake, state: latest}
     - {name: pkg-config, state: latest}
