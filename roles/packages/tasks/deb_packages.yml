@@ -91,6 +91,8 @@
     - {name: libmcrypt-dev, state: latest}
     - {name: libxml2-dev, state: latest}
 
+    # pact
+    - {name: libsqlite3-dev, state: latest}
 - name: Remove useless packages from the cache
   apt:
     autoclean: yes
