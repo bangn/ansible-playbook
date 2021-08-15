@@ -1,20 +1,19 @@
 ---
-
 - name: Install prerequisite packages for installing docker
   apt:
     name: "{{item.name}}"
     state: "{{item.state}}"
   with_items:
-    - {name: apt-transport-https, state: present}
-    - {name: ca-certificates, state: present}
-    - {name: gnupg2, state: present}
-    - {name: software-properties-common, state: present}
+    - { name: apt-transport-https, state: present }
+    - { name: ca-certificates, state: present }
+    - { name: gnupg2, state: present }
+    - { name: software-properties-common, state: present }
 
 - name: Add docker official GPG key
-  command: sh -c 'curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -'
+  command: sh -c 'curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'
 
-- name: Set up buster docker repository
-  command: sh -c 'add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian buster test"'
+- name: Set up docker repository
+  command: sh -c 'add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"'
 
 - name: Install docker
   apt:
@@ -22,9 +21,9 @@
     state: "{{item.state}}"
     update_cache: yes
   with_items:
-    - {name: docker-ce, state: present}
-    - {name: docker-ce-cli, state: present}
-    - {name: containerd.io, state: present}
+    - { name: docker-ce, state: present }
+    - { name: docker-ce-cli, state: present }
+    - { name: containerd.io, state: present }
 
 - name: Add docker group
   become: true

@@ -1,21 +1,20 @@
 ---
-
-- name: Add debian buster non-free contrib
+- name: Add debian testing non-free contrib
   apt_repository:
-    repo: deb http://deb.debian.org/debian/ buster contrib non-free
+    repo: deb http://deb.debian.org/debian/ testing contrib non-free
     state: present
 
-- name: Add debian buster security update apt repo
+- name: Add debian testing security update apt repo
   apt_repository:
-    repo: deb http://security.debian.org/ buster/updates contrib non-free
+    repo: deb http://security.debian.org/ testing/updates contrib non-free
     state: present
 
-- name: Add debian buster stable update apt repo
+- name: Add debian testing stable update apt repo
   apt_repository:
-    repo: deb http://ftp.debian.org/debian buster-updates contrib non-free
+    repo: deb http://ftp.debian.org/debian testing-updates contrib non-free
     state: present
 
-- name: Add debian buster backport apt repo
+- name: Add debian testing backport apt repo
   apt_repository:
-    repo: deb http://deb.debian.org/debian buster-backports main contrib non-free
+    repo: deb http://deb.debian.org/debian testing-backports main contrib non-free
     state: present
