@@ -1,5 +1,4 @@
 ---
-
 # Deb packages
 - name: Install deb packages
   apt:
@@ -7,91 +6,92 @@
     state: "{{item.state}}"
     update_cache: yes
   with_items:
-    - {name: acpi-call-dkms, state: present}
-    - {name: apticron, state: latest}
-    - {name: arandr, state: present}
-    - {name: atril, state: absent}
-    - {name: autojump, state: present}
-    - {name: borgbackup, state: latest}
-    - {name: ca-certificates, state: latest}
-    - {name: cups, state: present}
-    - {name: cups-pdf, state: present}
-    - {name: dnsmasq, state: present}
-    - {name: dnsutils, state: present}
-    - {name: exfat-fuse, state: present}
-    - {name: exfat-utils, state: present}
-    - {name: exim4, state: latest}
-    - {name: fcitx, state: present}
-    - {name: firmware-iwlwifi, state: latest}
-    - {name: firmware-linux, state: latest}
-    - {name: firmware-sof-signed, state: latest}
-    - {name: fonts-font-awesome, state: present}
-    - {name: fonts-hack, state: present}
-    - {name: fonts-hack-ttf, state: present}
-    - {name: fwupd, state: present}
-    - {name: git, state: absent}  # Use git from nix
-    - {name: i3, state: latest}
-    - {name: i3blocks, state: latest}
-    - {name: ldnsutils, state: present}
-    - {name: libnss3-tools, state: latest}
-    - {name: libpq-dev, state: present}   # For installing pg gem
-    - {name: libreadline-dev, state: present}
-    - {name: libssl-dev, state: latest}
-    - {name: neovim, state: absent}
-    - {name: openconnect, state: present}
-    - {name: openssl, state: latest}
-    - {name: python3-dev, state: latest}
-    - {name: python3-pip, state: latest}
-    - {name: python3-pynvim, state: latest}
-    - {name: rkhunter, state: latest}
-    - {name: rofi, state: present}
-    - {name: rsync, state: latest}
-    - {name: scrot, state: present}
-    - {name: ssh-askpass, state: latest}
-    - {name: ssh-askpass-gnome, state: latest}
-    - {name: texlive-fonts-extra, state: latest}
-    - {name: texlive-fonts-recommended, state: latest}
-    - {name: texlive-latex-base, state: latest}
-    - {name: texlive-latex-extra, state: latest}
-    - {name: tlp, state: present}
-    - {name: tp-smapi-dkms, state: present}
-    - {name: unattended-upgrades, state: latest}
-    - {name: xautolock, state: latest}
-    - {name: xbacklight, state: latest}
-    - {name: xdotool, state: latest}
-    - {name: xfce4-clipman, state: latest}
-    - {name: xfce4-clipman-plugin, state: latest}
-    - {name: xserver-xorg-input-synaptics, state: latest}
-    - {name: xserver-xorg-video-intel, state: latest}
-    - {name: zathura, state: present}
-    - {name: zsh, state: latest}
+    - { name: acpi-call-dkms, state: present }
+    - { name: apticron, state: latest }
+    - { name: arandr, state: present }
+    - { name: atril, state: absent }
+    - { name: autojump, state: present }
+    - { name: borgbackup, state: latest }
+    - { name: ca-certificates, state: latest }
+    - { name: cups, state: present }
+    - { name: cups-pdf, state: present }
+    - { name: dnsmasq, state: present }
+    - { name: dnsutils, state: present }
+    - { name: exfat-fuse, state: present }
+    - { name: exfat-utils, state: present }
+    - { name: exim4, state: latest }
+    - { name: fcitx, state: present }
+    - { name: firmware-iwlwifi, state: latest }
+    - { name: firmware-linux, state: latest }
+    - { name: firmware-sof-signed, state: latest }
+    - { name: fonts-font-awesome, state: present }
+    - { name: fonts-hack, state: present }
+    - { name: fonts-hack-ttf, state: present }
+    - { name: fwupd, state: present }
+    - { name: git, state: absent } # Use git from nix
+    - { name: i3, state: latest }
+    - { name: i3blocks, state: latest }
+    - { name: ldnsutils, state: present }
+    - { name: libnss3-tools, state: latest }
+    - { name: libpq-dev, state: present } # For installing pg gem
+    - { name: libreadline-dev, state: present }
+    - { name: libssl-dev, state: latest }
+    - { name: neovim, state: absent }
+    - { name: openconnect, state: present }
+    - { name: openssl, state: latest }
+    - { name: python3-dev, state: latest }
+    - { name: python3-pip, state: latest }
+    - { name: python3-pynvim, state: latest }
+    - { name: python3-venv, state: latest }
+    - { name: rkhunter, state: latest }
+    - { name: rofi, state: present }
+    - { name: rsync, state: latest }
+    - { name: scrot, state: present }
+    - { name: ssh-askpass, state: latest }
+    - { name: ssh-askpass-gnome, state: latest }
+    - { name: texlive-fonts-extra, state: latest }
+    - { name: texlive-fonts-recommended, state: latest }
+    - { name: texlive-latex-base, state: latest }
+    - { name: texlive-latex-extra, state: latest }
+    - { name: tlp, state: present }
+    - { name: tp-smapi-dkms, state: present }
+    - { name: unattended-upgrades, state: latest }
+    - { name: xautolock, state: latest }
+    - { name: xbacklight, state: latest }
+    - { name: xdotool, state: latest }
+    - { name: xfce4-clipman, state: latest }
+    - { name: xfce4-clipman-plugin, state: latest }
+    - { name: xserver-xorg-input-synaptics, state: latest }
+    - { name: xserver-xorg-video-intel, state: latest }
+    - { name: zathura, state: present }
+    - { name: zsh, state: latest }
 
     # Alacritty
-    - {name: cmake, state: latest}
-    - {name: pkg-config, state: latest}
-    - {name: libfreetype6-dev, state: latest}
-    - {name: libfontconfig1-dev, state: latest}
-    - {name: libxcb-xfixes0-dev, state: latest}
+    - { name: cmake, state: latest }
+    - { name: pkg-config, state: latest }
+    - { name: libfreetype6-dev, state: latest }
+    - { name: libfontconfig1-dev, state: latest }
+    - { name: libxcb-xfixes0-dev, state: latest }
 
     # ghcup
-    - {name: libffi-dev, state: latest}
-    - {name: libgmp-dev, state: latest}
-    - {name: libgmp10, state: latest}
-    - {name: libncurses-dev, state: latest}
-    - {name: libncurses-dev, state: latest}
-    - {name: libncurses5, state: latest}
-    - {name: libtinfo5, state: latest}
+    - { name: libffi-dev, state: latest }
+    - { name: libgmp-dev, state: latest }
+    - { name: libgmp10, state: latest }
+    - { name: libncurses-dev, state: latest }
+    - { name: libncurses-dev, state: latest }
+    - { name: libncurses5, state: latest }
+    - { name: libtinfo5, state: latest }
 
     # shippit
-    - {name: imagemagick, state: latest}
-    - {name: mcrypt, state: latest}
-    - {name: libcurl4-openssl-dev, state: latest}
-    - {name: libmagickwand-dev, state: latest}
-    - {name: libmcrypt-dev, state: latest}
-    - {name: libxml2-dev, state: latest}
+    - { name: imagemagick, state: latest }
+    - { name: mcrypt, state: latest }
+    - { name: libcurl4-openssl-dev, state: latest }
+    - { name: libmagickwand-dev, state: latest }
+    - { name: libmcrypt-dev, state: latest }
+    - { name: libxml2-dev, state: latest }
 
     # pact
-    - {name: libsqlite3-dev, state: latest}
+    - { name: libsqlite3-dev, state: latest }
 - name: Remove useless packages from the cache
   apt:
     autoclean: yes
