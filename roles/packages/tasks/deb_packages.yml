@@ -10,7 +10,6 @@
     - { name: apticron, state: latest }
     - { name: arandr, state: present }
     - { name: atril, state: absent }
-    - { name: autojump, state: present }
     - { name: borgbackup, state: latest }
     - { name: ca-certificates, state: latest }
     - { name: cups, state: present }

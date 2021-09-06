@@ -1,22 +1,11 @@
 ---
-
 - name: Clone dotfiles
   git:
-    repo: 'https://github.com/bangn/dotfiles'
+    repo: "https://github.com/bangn/dotfiles"
     dest: /home/bangn/dotfiles
     update: no
   become: yes
   become_user: bangn
-
-- name: Remove default asdfrc
-  file:
-    path: '/home/bangn/.asdfrc'
-    state: absent
-
-- name: Remove default tool-versions
-  file:
-    path: '/home/bangn/.tool-versions'
-    state: absent
 
 - name: Create screenshots directory
   become: yes

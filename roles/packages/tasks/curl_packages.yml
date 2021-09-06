@@ -1,5 +1,4 @@
 ---
-
 - name: Prepare for installing nix
   become: yes
   become_user: root
@@ -8,7 +7,7 @@
     state: directory
     owner: bangn
     group: bangn
-    mode: '0755'
+    mode: "0755"
 
 - name: Allow unprivileged userns clone
   become: true
@@ -17,6 +16,3 @@
 
 - name: Install nix packages manager
   command: bash -c 'curl https://nixos.org/nix/install | sh'
-
-- name: Install asdf-vm
-  command: bash -c 'git clone https://github.com/asdf-vm/asdf.git ~/.asdf'
