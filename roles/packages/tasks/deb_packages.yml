@@ -81,14 +81,6 @@
     - { name: libncurses5, state: latest }
     - { name: libtinfo5, state: latest }
 
-    # shippit
-    - { name: imagemagick, state: latest }
-    - { name: mcrypt, state: latest }
-    - { name: libcurl4-openssl-dev, state: latest }
-    - { name: libmagickwand-dev, state: latest }
-    - { name: libmcrypt-dev, state: latest }
-    - { name: libxml2-dev, state: latest }
-
     # pact
     - { name: libsqlite3-dev, state: latest }
 - name: Remove useless packages from the cache

@@ -22,8 +22,8 @@ Requires=network-online.target
 [Service]
 User=root
 Group=root
-ExecStart=/home/bangn/.nix-profile/bin/caddy run --environ --config /home/bangn/dev/shippit/caddy/Caddyfile
-ExecReload=/home/bangn/.nix-profile/bin/caddy reload --config /home/bangn/dev/shippit/caddy/Caddyfile
+ExecStart=/home/bangn/.nix-profile/bin/caddy run --environ --config /home/bangn/dev/caddy/Caddyfile
+ExecReload=/home/bangn/.nix-profile/bin/caddy reload --config /home/bangn/dev/caddy/Caddyfile
 TimeoutStopSec=5s
 LimitNOFILE=1048576
 LimitNPROC=512
