@@ -1,5 +1,9 @@
 #! /bin/bash
 
+if [ ! -x "$(command -v curl)" ]; then
+  sudo apt install -y curl
+fi
+
 if [ ! -x "$(command -v ansible)" ]; then
   sudo apt update
   sudo apt install -y python3-pip
