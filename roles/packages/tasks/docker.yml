@@ -12,12 +12,8 @@
 - name: Add docker official GPG key
   command: sh -c 'curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'
 
-- name: Check if docker apt repository already exist
-  shell: grep "download.docker.com" /etc/apt/sources.list; exit 0
-  register: test_grep_docker_apt_repo
-
 - name: Set up docker repository
-  command: sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian bulleye stable" | sudo tee -a /etc/apt/sources.list'
+  command: sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian bulleye stable" | sudo tee -a /etc/apt/source.list.d/docker.list'
 
 - name: Install docker
   apt:
