@@ -6,8 +6,9 @@ if [ ! -x "$(command -v ansible)" ]; then
   pip3 install ansible
 fi
 
-export PATH="~/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 ansible-playbook --ask-become-pass -i inventories/localhost playbook.yml
 
 # Restart NetworkManager as dnsmasq has changed the network settings
 sudo service NetworkManager restart
+sudo service dnsmasq restart
