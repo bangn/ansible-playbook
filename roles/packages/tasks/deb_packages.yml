@@ -83,6 +83,14 @@
 
     # pact
     - { name: libsqlite3-dev, state: latest }
+
+    # neovim
+    - { name: automake, state: latest }
+    - { name: autoconf, state: latest }
+    - { name: gettext, state: latest }
+    - { name: libtool, state: absent }
+    - { name: libtool-bin, state: absent }
+    - { name: ninja-build, state: latest }
 - name: Remove useless packages from the cache
   apt:
     autoclean: yes
