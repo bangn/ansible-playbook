@@ -1,5 +1,4 @@
 ---
-
 - name: Add nix-store entry to crontab
   cron:
     name: "nix-store --optimise"
@@ -32,10 +31,11 @@
   become_user: root
   copy:
     force: true
-    src:   ./exim4/
-    dest:  /etc/exim4/
+    src: ./exim4/
+    dest: /etc/exim4/
     owner: root
     group: root
+    mode: preserve
   tags: exim4
 
 - name: Add personal email to /etc/aliases
@@ -53,7 +53,7 @@
     state: directory
     owner: bangn
   with_items:
-    - {path: "/home/bangn/oss"}
+    - { path: "/home/bangn/oss" }
   tags:
     - directory
 
@@ -85,7 +85,7 @@
     group: backup
     mode: 0774
   with_items:
-    - {path: "/media/backup"}
+    - { path: "/media/backup" }
   tags:
     - backup
 
@@ -113,14 +113,13 @@
   become: true
   become_user: root
   template:
-    src:   etc/X11/Xsession.d/90preserve_ld_library_path
-    dest:  /etc/X11/Xsession.d/90preserve_ld_library_path
+    src: etc/X11/Xsession.d/90preserve_ld_library_path
+    dest: /etc/X11/Xsession.d/90preserve_ld_library_path
     owner: root
     group: root
-    mode:  0644
+    mode: 0644
   tags:
     - systems
-
 # - name: Disable sof audio driver and fall back to intel
 #   become: true
 #   become_user: root
