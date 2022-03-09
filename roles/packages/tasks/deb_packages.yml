@@ -17,7 +17,6 @@
     - { name: dnsmasq, state: present }
     - { name: dnsutils, state: present }
     - { name: exfat-fuse, state: present }
-    - { name: exfat-utils, state: present }
     - { name: exim4, state: latest }
     - { name: fcitx, state: present }
     - { name: firmware-iwlwifi, state: latest }
@@ -27,7 +26,7 @@
     - { name: fonts-hack, state: present }
     - { name: fonts-hack-ttf, state: present }
     - { name: fwupd, state: present }
-    - { name: git, state: absent } # Use git from nix
+    - { name: git, state: present } # Use git from nix
     - { name: i3, state: latest }
     - { name: i3blocks, state: latest }
     - { name: ldnsutils, state: present }
