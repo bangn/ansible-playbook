@@ -35,6 +35,7 @@
     - { name: libpq-dev, state: present } # For installing pg gem
     - { name: libreadline-dev, state: present }
     - { name: libssl-dev, state: latest }
+    - { name: libyaml-dev, state: absent }
     - { name: neovim, state: absent }
     - { name: openconnect, state: present }
     - { name: openssl, state: latest }
@@ -63,6 +64,7 @@
     - { name: xserver-xorg-input-synaptics, state: latest }
     - { name: xserver-xorg-video-intel, state: latest }
     - { name: zathura, state: present }
+    - { name: zlib1g-dev, state: present }
     - { name: zsh, state: latest }
 
     # Alacritty
