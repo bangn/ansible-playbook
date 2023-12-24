@@ -1,5 +1,3 @@
----
-
 - name: Create /etc/X11/xorg.conf.d directory if it does not exist
   file:
     path: "{{ item }}"
@@ -20,11 +18,11 @@
 
 - name: customise tlp settings
   template:
-    src:   etc/default/tlp
-    dest:  /etc/default/tlp
+    src: etc/default/tlp
+    dest: /etc/default/tlp
     owner: root
     group: root
-    mode:  0644
+    mode: 0644
 
 # local.conf
 - name: Create /etc/sysctl.d/local.conf
