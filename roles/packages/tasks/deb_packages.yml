@@ -35,7 +35,7 @@
     - { name: libpq-dev, state: present } # For installing pg gem
     - { name: libreadline-dev, state: present }
     - { name: libssl-dev, state: latest }
-    - { name: libyaml-dev, state: absent }
+    - { name: libyaml-dev, state: latest }
     - { name: neovim, state: absent }
     - { name: openconnect, state: present }
     - { name: openssl, state: latest }
