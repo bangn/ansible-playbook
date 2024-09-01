@@ -23,6 +23,12 @@
   import_tasks: docker.yml
   tags: docker
 
+- name: "Install grafana"
+  become: yes
+  become_method: sudo
+  import_tasks: grafana.yml
+  tags: grafana
+
 - name: "Install packages using curl"
   become: yes
   become_user: bangn

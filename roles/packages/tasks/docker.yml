@@ -1,4 +1,5 @@
 ---
+
 - name: Install prerequisite packages for installing docker
   apt:
     name: "{{item.name}}"

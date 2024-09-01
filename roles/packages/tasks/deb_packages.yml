@@ -95,6 +95,7 @@
     - { name: libtool, state: latest }
     - { name: libtool-bin, state: latest }
     - { name: ninja-build, state: latest }
+
 - name: Remove useless packages from the cache
   apt:
     autoclean: yes
