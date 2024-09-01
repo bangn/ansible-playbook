@@ -15,7 +15,7 @@
     - { name: ca-certificates, state: latest }
     - { name: cups, state: present }
     - { name: cups-pdf, state: present }
-    - { name: dnsmasq, state: present }
+    - { name: dnsmasq, state: absent }
     - { name: dnsutils, state: present }
     - { name: exfat-fuse, state: present }
     - { name: exim4, state: latest }

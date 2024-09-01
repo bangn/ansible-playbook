@@ -15,4 +15,4 @@ ansible-playbook --ask-become-pass -i inventories/localhost playbook.yml
 
 # Restart NetworkManager as dnsmasq has changed the network settings
 sudo service NetworkManager restart
-sudo service dnsmasq restart
+# sudo service dnsmasq restart
