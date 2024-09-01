@@ -39,6 +39,8 @@
     - { name: neovim, state: absent }
     - { name: openconnect, state: present }
     - { name: openssl, state: latest }
+    - { name: prometheus, state: latest }
+    - { name: prometheus-node-exporter, state: latest }
     - { name: python3-dev, state: latest }
     - { name: python3-pip, state: latest }
     - { name: python3-pynvim, state: latest }
