@@ -19,6 +19,7 @@
     - { name: dnsutils, state: present }
     - { name: exfat-fuse, state: present }
     - { name: exim4, state: latest }
+    - { name: fail2ban, state: present }
     - { name: fcitx, state: present }
     - { name: firmware-iwlwifi, state: latest }
     - { name: firmware-linux, state: latest }

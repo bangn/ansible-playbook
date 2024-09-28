@@ -1,0 +1,17 @@
+- name: Install fail2ban packages
+  apt:
+    name: fail2ban
+    state: present
+    update_cache: yes
+
+- name: Configure fail2ban
+  become: true
+  become_user: root
+  template:
+    src: etc/fail2ban/jail.local
+    dest: /etc/fail2ban/jail.local
+    owner: root
+    group: root
+    mode: 0644
+  tags:
+    - fail2ban

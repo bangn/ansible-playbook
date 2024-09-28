@@ -1,0 +1,10 @@
+[sshd]
+enabled = true
+filter = sshd
+port = ssh
+bantime = 3600 # In seconds
+maxretry = 3
+log = /var/log/fail2ban.log
+backend = systemd
+
+# vi: ft=toml
