@@ -3,6 +3,8 @@
     name: fail2ban
     state: present
     update_cache: yes
+  tags:
+    - fail2ban
 
 - name: Configure fail2ban
   become: true

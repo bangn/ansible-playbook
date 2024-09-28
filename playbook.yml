@@ -30,6 +30,6 @@
       tags:
         - dotfiles
 
-    # - role: dns
-    #   tags:
-    #     - dns
+    - role: security
+      tags:
+        - security
