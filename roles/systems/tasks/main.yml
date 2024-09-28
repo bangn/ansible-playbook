@@ -120,17 +120,3 @@
     mode: 0644
   tags:
     - systems
-# - name: Disable sof audio driver and fall back to intel
-#   become: true
-#   become_user: root
-#   replace:
-#     path: /etc/default/grub
-#     regexp: 'GRUB_CMDLINE_LINUX_DEFAULT'
-#     replace: 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash snd_hda_intel.dmic_detect=0"'
-#   tags:
-#     - systems
-
-# - name: Update grub after replace sof audio driver with intel
-#   become: true
-#   become_user: root
-#   command: 'update-grub'
