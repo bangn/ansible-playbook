@@ -38,3 +38,9 @@
     fc-cache -fv
     rm Hack.zip
   tags: font
+
+- name: "Install borgbackup"
+  become: yes
+  become_method: sudo
+  import_tasks: borgbackup.yml
+  tags: borgbackup

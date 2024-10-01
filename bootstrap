@@ -7,7 +7,7 @@ fi
 if [ ! -x "$(command -v ansible)" ]; then
   sudo apt update
   sudo apt install -y python3-pip
-  pip3 install ansible
+  pip3 install ansible --break-system-packages
 fi
 
 export PATH="$HOME/.local/bin:$PATH"

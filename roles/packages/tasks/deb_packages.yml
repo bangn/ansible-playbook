@@ -11,7 +11,6 @@
     - { name: arandr, state: present }
     - { name: atril, state: absent }
     - { name: blueman, state: present }
-    - { name: borgbackup, state: latest }
     - { name: ca-certificates, state: latest }
     - { name: cups, state: present }
     - { name: cups-pdf, state: present }
@@ -61,8 +60,6 @@
     - { name: xautolock, state: latest }
     - { name: xbacklight, state: latest }
     - { name: xdotool, state: latest }
-    - { name: xfce4-clipman, state: latest }
-    - { name: xfce4-clipman-plugin, state: latest }
     - { name: zathura, state: present }
     - { name: zlib1g-dev, state: present }
     - { name: zsh, state: latest }

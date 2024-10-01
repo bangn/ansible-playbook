@@ -57,47 +57,6 @@
   tags:
     - directory
 
-- name: Add backup group
-  become: true
-  become_user: root
-  group:
-    name: backup
-    state: present
-  tags:
-    - backup
-
-- name: Add bangn to backup
-  become: true
-  become_user: root
-  user:
-    name: bangn
-    group: backup
-    append: yes
-  tags:
-    - backup
-
-- name: Create backup directory
-  become: true
-  become_user: root
-  file:
-    path: "{{item.path}}"
-    state: directory
-    group: backup
-    mode: 0774
-  with_items:
-    - { path: "/media/backup" }
-  tags:
-    - backup
-
-- name: Add hard drive mount point to fstab
-  become: true
-  become_user: root
-  lineinfile:
-    path: /etc/fstab
-    line: "UUID=77f75973-ac5a-4fe0-a1d8-afff947fa647\t/media/backup\text4\tnofail\t0\t2"
-  tags:
-    - backup
-
 - name: Preserve LD_LIBRARY_PATH
   become: true
   become_user: root
@@ -107,5 +66,16 @@
     owner: root
     group: root
     mode: 0644
+  tags:
+    - systems
+
+- name: Comment out specific line in ssh_config
+  become: true
+  become_user: root
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/ssh_config
+    regexp: '^\s*GSSAPIAuthentication yes' # The line you want to comment out
+    line: '# GSSAPIAuthentication yes'  # The commented line
+    state: present  # Ensure the line is present in its commented form
   tags:
     - systems

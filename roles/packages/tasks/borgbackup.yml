@@ -1,0 +1,52 @@
+- name: Install prerequisite packages for borgbackup
+  apt:
+    name: "{{item.name}}"
+    state: "{{item.state}}"
+    update_cache: yes
+  with_items:
+    - { name: libfuse3-dev, state: latest }
+    - { name: fuse3, state: latest }
+    - { name: borgbackup, state: latest }
+    - { name: python3-pyfuse3, state: latest }
+
+- name: Add hard drive mount point to fstab
+  become: true
+  become_user: root
+  lineinfile:
+    path: /etc/fstab
+    line: "UUID=77f75973-ac5a-4fe0-a1d8-afff947fa647\t/media/backup\text4\tnofail\t0\t2"
+  tags:
+    - borgbackup
+
+- name: Add backup group
+  become: true
+  become_user: root
+  group:
+    name: backup
+    state: present
+  tags:
+    - borgbackup
+
+- name: Add bangn to backup
+  become: true
+  become_user: root
+  user:
+    name: bangn
+    group: backup
+    append: yes
+  tags:
+    - borgbackup
+
+- name: Create backup directory
+  become: true
+  become_user: root
+  file:
+    path: "{{item.path}}"
+    state: directory
+    group: backup
+    mode: 0774
+  with_items:
+    - { path: "/media/backup" }
+  tags:
+    - borgbackup
+

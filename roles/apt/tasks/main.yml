@@ -23,7 +23,7 @@
 
 - name: Use debian testing apt repo
   apt_repository:
-    repo: deb http://deb.debian.org/debian bookworm main contrib non-free
+    repo: deb http://deb.debian.org/debian testing main contrib non-free
     state: present
 
 - name: Add debian unstable

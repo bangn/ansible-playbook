@@ -1,4 +1,6 @@
 - name: Install fail2ban packages
+  become: true
+  become_user: root
   apt:
     name: fail2ban
     state: present
