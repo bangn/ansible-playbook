@@ -98,17 +98,6 @@
   tags:
     - backup
 
-- name: Configure PulseAudio's to load Alsa modules with the correct device and channel settings
-  become: true
-  become_user: root
-  blockinfile:
-    path: /etc/pulse/default.pa
-    block: |
-      load-module module-alsa-sink device=hw:0,0 channels=4
-      load-module module-alsa-source device=hw:0,6 channels=4
-  tags:
-    - systems
-
 - name: Preserve LD_LIBRARY_PATH
   become: true
   become_user: root

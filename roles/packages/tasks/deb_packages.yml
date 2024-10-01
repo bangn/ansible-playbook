@@ -19,7 +19,6 @@
     - { name: dnsutils, state: present }
     - { name: exfat-fuse, state: present }
     - { name: exim4, state: latest }
-    - { name: fail2ban, state: present }
     - { name: fcitx, state: present }
     - { name: firmware-iwlwifi, state: latest }
     - { name: firmware-linux, state: latest }
@@ -64,8 +63,6 @@
     - { name: xdotool, state: latest }
     - { name: xfce4-clipman, state: latest }
     - { name: xfce4-clipman-plugin, state: latest }
-    - { name: xserver-xorg-input-synaptics, state: latest }
-    - { name: xserver-xorg-video-intel, state: latest }
     - { name: zathura, state: present }
     - { name: zlib1g-dev, state: present }
     - { name: zsh, state: latest }
@@ -73,7 +70,7 @@
     # Alacritty
     - { name: cmake, state: latest }
     - { name: libfontconfig1-dev, state: latest }
-    - { name: libfreetype6-dev, state: latest }
+    - { name: libfreetype-dev, state: latest }
     - { name: libxcb-xfixes0-dev, state: latest }
     - { name: libxkbcommon-dev, state: latest }
     - { name: pkg-config, state: latest }

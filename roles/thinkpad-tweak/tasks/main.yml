@@ -1,18 +1,3 @@
-- name: Create /etc/X11/xorg.conf.d directory if it does not exist
-  file:
-    path: "{{ item }}"
-    state: directory
-    owner: root
-    mode: 0755
-  with_items:
-    - /etc/X11/xorg.conf.d
-
-- name: Tweak touchpad
-  import_tasks: touchpad.yml
-
-- name: Tweak intel_backlight
-  import_tasks: intel_backlight.yml
-
 - name: systemd
   import_tasks: systemd.yml
 

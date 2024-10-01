@@ -29,8 +29,12 @@
   import_tasks: grafana.yml
   tags: grafana
 
-- name: "Install packages using curl"
-  become: yes
-  become_user: bangn
-  import_tasks: curl_packages.yml
-  tags: curl_packages
+- name: "Install Hack Nerd Font"
+  become: no
+  ansible.builtin.shell: |
+    curl -OL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip"
+    mkdir -p "$HOME/.fonts"
+    unzip Hack.zip -d "$HOME/.fonts/Hack/"
+    fc-cache -fv
+    rm Hack.zip
+  tags: font

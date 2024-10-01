@@ -1,3 +1,35 @@
+---
+
+- name: Install xorg packages
+  apt:
+    name: "{{item.name}}"
+    state: "{{item.state}}"
+    update_cache: yes
+  with_items:
+    - { name: xserver-xorg-input-synaptics, state: latest }
+    - { name: xserver-xorg-video-intel, state: latest }
+
+- name: Create /etc/X11/xorg.conf.d/20-intel.conf file if it is not exist
+  file:
+    path: "{{ item }}"
+    state: touch
+    owner: root
+    mode: 0755
+  with_items:
+    - /etc/X11/xorg.conf.d/20-intel.conf
+
+- name: Tweak intel backlight
+  blockinfile:
+    path: /etc/X11/xorg.conf.d/20-intel.conf
+    backup: yes
+    block: |
+      Section "Device"
+              Identifier  "card0"
+              Driver      "intel"
+              Option      "Backlight"  "intel_backlight"
+              BusID       "PCI:0:2:0"
+      EndSection
+
 - name: Create /etc/X11/xorg.conf.d/70-synaptics.conf file if it is not exist
   file:
     path: "{{ item }}"
@@ -30,3 +62,13 @@
                   Option "VertScrollDelta" "-114"
                   Option "VertTwoFingerScroll" "on"
       EndSection
+
+- name: Create /etc/X11/xorg.conf.d directory if it does not exist
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: root
+    mode: 0755
+  with_items:
+    - /etc/X11/xorg.conf.d
+
