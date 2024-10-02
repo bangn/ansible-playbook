@@ -1,3 +1,9 @@
-[localhost]
+[local]
 localhost ansible_connection=local
 localhost ansible_python_interpreter=/usr/bin/python3
+
+[remote]
+pizero ansible_connection=ssh
+pizero ansible_host=pizero.local
+pizero ansible_user=pizero
+pizero ansible_python_interpreter=/usr/bin/python3
