@@ -1,0 +1,27 @@
+---
+- name: Add nix-store entry to crontab
+  cron:
+    name: "nix-store --optimise"
+    minute: "0"
+    hour: "10"
+    weekday: "1"
+    job: "/home/bangn/.nix-profile/bin/nix-store --optimise"
+  tags: cron
+
+- name: Add nix-collect-garbage to crontab
+  cron:
+    name: "nix-collect-garbage --delete-old"
+    minute: "0"
+    hour: "11"
+    weekday: "1"
+    job: "/home/bangn/.nix-profile/bin/nix-collect-garbage --delete-old"
+  tags: cron
+
+- name: Update Steven Black hosts file
+  cron:
+    name: "Update Steven Black hosts"
+    minute: "0"
+    hour: "12"
+    weekday: "1"
+    job: "/home/bangn/dotfiles/tools/bin/steven-black-host"
+  tags: cron

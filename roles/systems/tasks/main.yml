@@ -1,31 +1,4 @@
 ---
-- name: Add nix-store entry to crontab
-  cron:
-    name: "nix-store --optimise"
-    minute: "0"
-    hour: "10"
-    weekday: "1"
-    job: "/home/bangn/.nix-profile/bin/nix-store --optimise"
-  tags: cron
-
-- name: Add nix-collect-garbage to crontab
-  cron:
-    name: "nix-collect-garbage --delete-old"
-    minute: "0"
-    hour: "11"
-    weekday: "1"
-    job: "/home/bangn/.nix-profile/bin/nix-collect-garbage --delete-old"
-  tags: cron
-
-- name: Update Steven Black hosts file
-  cron:
-    name: "Update Steven Black hosts"
-    minute: "0"
-    hour: "12"
-    weekday: "1"
-    job: "/home/bangn/dotfiles/tools/bin/steven-black-host"
-  tags: cron
-
 - name: Copy exim4 config files to /etc/exim4
   become: true
   become_user: root
@@ -69,13 +42,19 @@
   tags:
     - systems
 
-- name: Comment out specific line in ssh_config
+- name: Disable GSSAPIAuthentication in ssh_config
   become: true
   become_user: root
   ansible.builtin.lineinfile:
     path: /etc/ssh/ssh_config
     regexp: '^\s*GSSAPIAuthentication yes' # The line you want to comment out
-    line: '# GSSAPIAuthentication yes'  # The commented line
-    state: present  # Ensure the line is present in its commented form
+    line: "# GSSAPIAuthentication yes" # The commented line
+    state: present # Ensure the line is present in its commented form
   tags:
     - systems
+
+- name: Install crontab
+  become: yes
+  become_method: sudo
+  import_tasks: cron.yml
+  tags: cron
