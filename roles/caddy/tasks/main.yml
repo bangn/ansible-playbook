@@ -1,0 +1,42 @@
+- name: Ensure dependencies are installed.
+  ansible.builtin.apt:
+    name:
+      - apt-transport-https
+      - curl
+      - debian-archive-keyring
+      - debian-keyring
+      - gnupg2
+      - python3-debian
+    state: present
+
+- name: Add caddy repository
+  ansible.builtin.deb822_repository:
+    name: caddy
+    uris: "{{ caddy_apt_repository_url }}"
+    signed_by: "{{ caddy_apt_gpg_key }}"
+    components: "{{ caddy_apt_repository_components }}"
+    suites: "{{ caddy_apt_repository_suites }}"
+    types: "{{ caddy_apt_repository_types }}"
+    state: present
+    enabled: true
+
+- name: Run the equivalent of "apt-get update"
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Install Caddy
+  ansible.builtin.package:
+    name: caddy
+    state: present
+  notify: restart caddy
+
+- name: Add Caddy settings
+  copy:
+    force: true
+    src: ./files/Caddyfile
+    dest: /etc/caddy/Caddyfile
+    owner: root
+    group: root
+  tags:
+    - caddy-settings
+  notify: restart caddy

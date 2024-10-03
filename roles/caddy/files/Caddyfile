@@ -1,0 +1,3 @@
+open-web-ui.local {
+  reverse_proxy localhost:8080
+}

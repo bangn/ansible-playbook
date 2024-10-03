@@ -1,9 +1,16 @@
 ---
-
 - hosts: all
+  become: yes
+  become_user: root
+  roles:
+    - role: security
+      tags:
+        - security
+
+- hosts: localhost
   roles:
     - role: apt
-      become: true
+      become: yes
       become_user: root
       tags:
         - apt
@@ -30,6 +37,8 @@
       tags:
         - dotfiles
 
-    - role: security
+    - role: caddy
+      become: yes
+      become_method: sudo
       tags:
-        - security
+        - caddy
