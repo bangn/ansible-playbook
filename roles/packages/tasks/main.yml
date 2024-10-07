@@ -1,5 +1,4 @@
 ---
-
 - name: "Install deb packages"
   become: yes
   become_method: sudo
@@ -14,7 +13,7 @@
     dest: /etc/apticron/apticron.conf
     owner: root
     group: root
-    mode:  0644
+    mode: 0644
   tags: apt_config
 
 - name: "Install docker"
@@ -22,12 +21,6 @@
   become_method: sudo
   import_tasks: docker.yml
   tags: docker
-
-- name: "Install grafana"
-  become: yes
-  become_method: sudo
-  import_tasks: grafana.yml
-  tags: grafana
 
 - name: "Install Hack Nerd Font"
   become: no

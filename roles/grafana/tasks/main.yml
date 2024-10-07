@@ -1,0 +1,26 @@
+- name: Ensure dependencies are installed.
+  ansible.builtin.apt:
+    name:
+      - apt-transport-https
+      - debian-keyring
+      - gnupg2
+      - software-properties-common
+    state: present
+
+- name: "Import Grafana apt gpg key"
+  ansible.builtin.get_url:
+    url: "https://apt.grafana.com/gpg.key"
+    dest: "{{ grafana_key_dest }}"
+    mode: "0644"
+
+- name: "Add Grafana apt repository"
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=aarch64 signed-by={{ grafana_key_dest }}] https://apt.grafana.com/ stable main"
+    state: present
+    update_cache: true
+
+- name: Install Grafana
+  ansible.builtin.package:
+    name: grafana
+    state: present
+  notify: restart grafana
