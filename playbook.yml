@@ -42,3 +42,9 @@
       become_method: sudo
       tags:
         - caddy
+
+    - role: grafana
+      become: yes
+      become_method: sudo
+      tags:
+        - grafana
