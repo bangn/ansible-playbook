@@ -41,10 +41,10 @@
     name: docker
     state: present
 
-- name: Add bangn to docker
+- name: Add "{{ username }}" to docker
   become: true
   become_user: root
   user:
-    name: bangn
+    name: "{{ username }}"
     group: docker
     append: yes

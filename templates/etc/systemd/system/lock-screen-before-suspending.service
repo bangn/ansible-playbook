@@ -4,7 +4,7 @@ Before=sleep.target
 Before=suspend.target
 
 [Service]
-User=bangn
+User="{{ username }}"
 Type=forking
 Environment=DISPLAY=:0
 ExecStart=/usr/bin/i3lock && sleep 1

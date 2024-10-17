@@ -1,7 +1,3 @@
 open-web-ui.local {
   reverse_proxy localhost:8080
 }
-
-open-web-ui.bangn {
-  reverse_proxy localhost:8080
-}

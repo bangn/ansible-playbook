@@ -2,15 +2,15 @@
 - name: Clone dotfiles
   git:
     repo: "https://github.com/bangn/dotfiles"
-    dest: /home/bangn/dotfiles
+    dest: "{{ ansible_env.HOME }}/dotfiles"
     update: no
   become: yes
-  become_user: bangn
+  become_user: "{{ usename }}"
 
 - name: Create screenshots directory
   become: yes
-  become_user: bangn
+  become_user: "{{ usename }}"
   file:
-    path: /home/bangn/Pictures/screenshots
+    path: "{{ ansible_env.HOME }}/Pictures/screenshots"
     state: directory
-    owner: bangn
+    owner: "{{ usename }}"

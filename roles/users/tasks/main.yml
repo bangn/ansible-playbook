@@ -1,8 +1,8 @@
-- name: Add bangn group and shell
+- name: Add {{ username }} group and shell
   become: true
   become_user: root
   user:
-    name: bangn
+    name: "{{ username }}"
     group: sudo
     append: yes
     shell: /usr/bin/zsh

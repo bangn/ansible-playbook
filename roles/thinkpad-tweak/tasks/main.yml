@@ -61,7 +61,7 @@
   file:
     path: "{{ item }}"
     state: touch
-    owner: bangn
+    owner: "{{ username }}"
     mode: 0666
   with_items:
     - /etc/dnsmasq.d/steven-black-host.conf

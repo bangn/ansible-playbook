@@ -5,7 +5,7 @@
     minute: "0"
     hour: "10"
     weekday: "1"
-    job: "/home/bangn/.nix-profile/bin/nix-store --optimise"
+    job: "{{ ansible_env.HOME }}/.nix-profile/bin/nix-store --optimise"
   tags: cron
 
 - name: Add nix-collect-garbage to crontab
@@ -14,7 +14,7 @@
     minute: "0"
     hour: "11"
     weekday: "1"
-    job: "/home/bangn/.nix-profile/bin/nix-collect-garbage --delete-old"
+    job: "{{ ansible_env.HOME }}/.nix-profile/bin/nix-collect-garbage --delete-old"
   tags: cron
 
 - name: Update Steven Black hosts file
@@ -23,5 +23,5 @@
     minute: "0"
     hour: "12"
     weekday: "1"
-    job: "/home/bangn/dotfiles/tools/bin/steven-black-host"
+    job: "{{ ansible_env.HOME }}/dotfiles/tools/bin/steven-black-host"
   tags: cron

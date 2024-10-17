@@ -1,5 +1,5 @@
-127.0.0.1	  localhost dev
-127.0.1.0	  bangn
+127.0.0.1	  localhost open-web-ui.local
+127.0.1.0	  {{ username }}
 10.11.99.1    remarkable
 
 # The following lines are desirable for IPv6 capable hosts

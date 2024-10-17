@@ -17,16 +17,16 @@
   blockinfile:
     path: /etc/aliases
     block: |
-      bangn: thebangnguyen@gmail.com
+      {{ username }}: {{ user_email }}
   tags: exim4
 
 - name: Create user directory
   file:
     path: "{{item.path}}"
     state: directory
-    owner: bangn
+    owner: "{{ username }}"
   with_items:
-    - { path: "/home/bangn/oss" }
+    - { path: "{{ ansible_env.HOME }}/oss" }
   tags:
     - directory
 

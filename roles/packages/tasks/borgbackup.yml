@@ -27,11 +27,11 @@
   tags:
     - borgbackup
 
-- name: Add bangn to backup
+- name: Add "{{ username }}" to backup
   become: true
   become_user: root
   user:
-    name: bangn
+    name: "{{ username }}"
     group: backup
     append: yes
   tags:
@@ -49,4 +49,3 @@
     - { path: "/media/backup" }
   tags:
     - borgbackup
-

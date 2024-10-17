@@ -1,41 +1,40 @@
 ---
-
 - name: Add local resolv config
   become: true
   become_user: root
   template:
-    src:   etc/resolv.conf
-    dest:  /etc/resolv.conf
+    src: etc/resolv.conf
+    dest: /etc/resolv.conf
     owner: root
     group: root
-    mode:  0644
-
-- name: Make resolv cannot be modified
-  become: true
-  become_user: root
-  file:
-    path:  /etc/resolv.conf
-    owner: root
-    group: root
-    mode:  0644
-    attributes: +i
+    mode: 0644
 
 - name: Add dnsmasq config
   become: true
   become_user: root
   template:
-    src:   etc/dnsmasq.conf
-    dest:  /etc/dnsmasq.conf
+    src: etc/dnsmasq.conf
+    dest: /etc/dnsmasq.conf
     owner: root
     group: root
-    mode:  0666
+    mode: 0666
 
 - name: Add /etc/hosts
   become: true
   become_user: root
   template:
-    src:   etc/hosts
-    dest:  /etc/hosts
+    src: etc/hosts
+    dest: /etc/hosts
     owner: root
     group: root
-    mode:  0666
+    mode: 0666
+# Uncomment if using dnsmasq as DNS server
+# - name: Make resolv cannot be modified
+#   become: true
+#   become_user: root
+#   file:
+#     path:  /etc/resolv.conf
+#     owner: root
+#     group: root
+#     mode:  0644
+#     attributes: +i
