@@ -58,3 +58,8 @@
   become_method: sudo
   import_tasks: cron.yml
   tags: cron
+
+- name: Disable GNOME hot corner
+  command: gsettings set org.gnome.desktop.interface enable-hot-corners false
+  tags:
+    - gnome-hot-corner
