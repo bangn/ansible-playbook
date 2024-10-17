@@ -8,7 +8,6 @@
   with_items:
     - { name: acpi-call-dkms, state: present }
     - { name: alacritty, state: latest }
-    - { name: apticron, state: latest }
     - { name: arandr, state: present }
     - { name: atril, state: absent }
     - { name: blueman, state: present }
@@ -57,7 +56,6 @@
     - { name: texlive-latex-extra, state: latest }
     - { name: tlp, state: present }
     - { name: tp-smapi-dkms, state: present }
-    - { name: unattended-upgrades, state: latest }
     - { name: xautolock, state: latest }
     - { name: xbacklight, state: latest }
     - { name: xdotool, state: latest }

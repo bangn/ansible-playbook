@@ -1,0 +1,28 @@
+- name: Install packages
+  apt:
+    name: "{{item.name}}"
+    state: "{{item.state}}"
+    update_cache: yes
+  with_items:
+    - { name: apticron, state: latest }
+    - { name: unattended-upgrades, state: latest }
+
+- name: Add apticron config
+  become: true
+  become_user: root
+  template:
+    src: etc/apticron/apticron.conf
+    dest: /etc/apticron/apticron.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Add apt config to update packages periodically
+  become: true
+  become_user: root
+  template:
+    src: etc/apt/apt.conf.d/51unattended-upgrades
+    dest: /etc/apt/apt.conf.d/51unattended-upgrades
+    owner: root
+    group: root
+    mode: 0644

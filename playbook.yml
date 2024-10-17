@@ -2,6 +2,7 @@
 - hosts: all
   become: yes
   become_user: root
+
   roles:
     - role: security
       tags:
@@ -12,11 +13,11 @@
 
 - hosts: localhost
   roles:
-    - role: apt
+    - role: apt-config
       become: yes
       become_user: root
       tags:
-        - apt
+        - apt-config
 
     - role: users
       tags:
@@ -57,3 +58,7 @@
       become_method: sudo
       tags:
         - dns
+
+    - role: unattended-upgrades
+      tags:
+        - unattended-upgrades
