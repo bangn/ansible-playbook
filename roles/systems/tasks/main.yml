@@ -1,25 +1,4 @@
 ---
-- name: Copy exim4 config files to /etc/exim4
-  become: true
-  become_user: root
-  copy:
-    force: true
-    src: ./exim4/
-    dest: /etc/exim4/
-    owner: root
-    group: root
-    mode: preserve
-  tags: exim4
-
-- name: Add personal email to /etc/aliases
-  become: true
-  become_user: root
-  blockinfile:
-    path: /etc/aliases
-    block: |
-      {{ username }}: {{ user_email }}
-  tags: exim4
-
 - name: Create user directory
   file:
     path: "{{item.path}}"

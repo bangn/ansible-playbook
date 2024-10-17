@@ -6,6 +6,9 @@
     - role: security
       tags:
         - security
+    - role: exim4
+      tags:
+        - exim4
 
 - hosts: localhost
   roles:
