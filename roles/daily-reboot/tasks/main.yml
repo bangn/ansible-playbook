@@ -1,0 +1,40 @@
+- name: Create systemd service for reboot
+  copy:
+    dest: /etc/systemd/system/scheduled-reboot.service
+    content: |
+      [Unit]
+      Description=Scheduled Reboot
+
+      [Service]
+      Type=oneshot
+      ExecStart=/sbin/shutdown -r now
+
+- name: Create systemd timer for reboot
+  copy:
+    dest: /etc/systemd/system/scheduled-reboot.timer
+    content: |
+      [Unit]
+      Description=Timer for Scheduled Reboot
+
+      [Timer]
+      OnCalendar=daily
+      Persistent=true
+
+      [Install]
+      WantedBy=timers.target
+
+- name: Reload systemd to recognize new units
+  command: systemctl daemon-reload
+
+- name: Enable the reboot timer
+  command: systemctl enable scheduled-reboot.timer
+
+- name: Start the reboot timer
+  command: systemctl start scheduled-reboot.timer
+
+- name: Confirm the timer is active
+  command: systemctl list-timers --all
+  register: timer_status
+
+- debug:
+    var: timer_status.stdout_lines

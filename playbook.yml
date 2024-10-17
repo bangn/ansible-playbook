@@ -11,6 +11,14 @@
       tags:
         - exim4
 
+- hosts: pizero
+  become: yes
+  become_user: root
+  roles:
+    - role: daily-reboot
+      tags:
+        - daily-reboot
+
 - hosts: localhost
   roles:
     - role: apt-config
