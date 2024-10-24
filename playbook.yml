@@ -70,3 +70,7 @@
     - role: unattended-upgrades
       tags:
         - unattended-upgrades
+
+    - role: tailscale
+      tags:
+        - tailscale
