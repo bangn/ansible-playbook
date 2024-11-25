@@ -55,6 +55,7 @@
     - { name: texlive-latex-base, state: latest }
     - { name: texlive-latex-extra, state: latest }
     - { name: tlp, state: present }
+    - { name: tlp-rdw, state: present }
     - { name: tp-smapi-dkms, state: present }
     - { name: xautolock, state: latest }
     - { name: xbacklight, state: latest }
