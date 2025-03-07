@@ -15,7 +15,7 @@
 
 - name: "Add Grafana apt repository"
   ansible.builtin.apt_repository:
-    repo: "deb [arch=aarch64 signed-by={{ grafana_key_dest }}] https://apt.grafana.com/ stable main"
+    repo: "deb [signed-by={{ grafana_key_dest }}] https://apt.grafana.com/ stable main"
     state: present
     update_cache: true
 
