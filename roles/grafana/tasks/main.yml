@@ -22,5 +22,5 @@
 - name: Install Grafana
   ansible.builtin.package:
     name: grafana
-    state: present
-  notify: restart grafana
+    state: absent
+  # notify: restart grafana
